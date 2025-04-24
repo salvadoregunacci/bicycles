@@ -1,0 +1,59 @@
+// ============================
+// Inter
+
+@font-face {
+  font-family: 'Inter';
+  src: url('../assets/fonts/Inter-Light.woff') format('woff'), url('../assets/fonts/Inter-Light.woff2') format('woff2');
+  font-style: normal;
+  font-weight: 300;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Inter';
+  src: url('../assets/fonts/Inter-Regular.woff') format('woff'), url('../assets/fonts/Inter-Regular.woff2') format('woff2');
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Inter';
+  src: url('../assets/fonts/Inter-Medium.woff') format('woff'), url('../assets/fonts/Inter-Medium.woff2') format('woff2');
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+}
+
+// ============================
+// BebasNeueCyrillic
+
+@font-face {
+  font-family: 'BebasNeueCyrillic';
+  src: url('../assets/fonts/BebasNeueCyrillic.woff') format('woff'), url('../assets/fonts/BebasNeueCyrillic.woff2') format('woff2');
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+}
+
+// ============================
+// BebasNeue
+
+@font-face {
+  font-family: 'BebasNeue';
+  src: url('../assets/fonts/BebasNeueBold.woff') format('woff'), url('../assets/fonts/BebasNeueBold.woff2') format('woff2');
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+}
+
+// ============================
+// OpenSans
+
+@font-face {
+  font-family: 'OpenSans';
+  src: url('../assets/fonts/OpenSans-Regular.woff') format('woff'), url('../assets/fonts/OpenSans-Regular.woff2') format('woff2');
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+}
