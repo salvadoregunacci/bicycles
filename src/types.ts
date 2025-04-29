@@ -48,11 +48,35 @@ export interface ICategory {
 }
 
 export interface IShopState {
+    currency: string,
     newItems: IShopItem[] | null,
     categories: ICategory[] | null,
     bestItems: IShopItem[] | null,
     outfitItems: IOutfitItem[] | null,
     reviews: IReview[] | null,
+    catalogFilter: ICatalogFilter,
+}
+
+interface IFilterItem {
+    value: boolean,
+    title: string,
+}
+
+export interface IColor {
+    value: string,
+    isSelected: boolean,
+}
+
+export interface ICatalogFilter {
+    onlyInStock: boolean,
+    categories: Record<string, IFilterItem>,
+    price: {
+        min: number,
+        max: number,
+    },
+    brands: Record<string, IFilterItem>,
+    frameMaterials: Record<string, IFilterItem>,
+    colors: IColor[],
 }
 
 

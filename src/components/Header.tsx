@@ -6,10 +6,10 @@ import {HTMLAttributes, useCallback, useEffect, useState} from "react";
 import Container from "./Container.tsx";
 
 interface IProps extends HTMLAttributes<HTMLElement> {
-    isFixed?: boolean,
+    isSticky?: boolean,
 }
 
-const Header = ({isFixed = false, ...props}: IProps) => {
+const Header = ({isSticky = false, ...props}: IProps) => {
     const [colorizeVariant, setColorizeVariant] = useState(false);
 
     const handleScroll = useCallback(() => {
@@ -26,7 +26,7 @@ const Header = ({isFixed = false, ...props}: IProps) => {
 
     return (
         <header
-            className={`header ${isFixed ? "is-fixed" : ""} ${isFixed || colorizeVariant ? "colorize" : ""}`}
+            className={`header ${isSticky ? "is-sticky" : ""} ${isSticky || colorizeVariant ? "colorize" : ""}`}
             {...props}
         >
             <Container>

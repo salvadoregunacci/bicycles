@@ -147,7 +147,7 @@ const Footer = () => {
                     </div>
                     <div className="footer-desc t4">
                         <div className="footer-copyright">© 2023 world bike</div>
-                        <a href="#" target="_blank">Пользовательское соглашение</a>
+                        <a href="#" target="_blank">Угода користувача</a>
                     </div>
                 </Container>
             </footer>

@@ -1,5 +1,5 @@
-import {createAsyncThunk, createSlice} from "@reduxjs/toolkit";
-import {ICategory, IOutfitItem, IReview, IShopItem, IShopState} from "../../types.ts";
+import {createAsyncThunk, createSlice, PayloadAction} from "@reduxjs/toolkit";
+import {ICatalogFilter, ICategory, IOutfitItem, IReview, IShopItem, IShopState} from "../../types.ts";
 import {newItems} from "../../data_mocup/newItems.ts";
 import categories from "../../data_mocup/categories.ts";
 import {outfitItems} from "../../data_mocup/outfitItems.ts";
@@ -131,17 +131,390 @@ export const getReviews = createAsyncThunk<IReview[], undefined, {
 });
 
 const initialState: IShopState = {
+    currency: "\u{20B4}",
     bestItems: null,
     newItems: null,
     categories: null,
     outfitItems: null,
     reviews: null,
+    catalogFilter: {
+        onlyInStock: false,
+        categories: {
+            triathlon: {
+                value: false,
+                title: "Велосипеди для тріатлону",
+            },
+            mountain: {
+                value: true,
+                title: "Гірські велосипеди",
+            },
+            city: {
+                value: false,
+                title: "Міські велосипеди",
+            },
+            gravel: {
+                value: false,
+                title: "Гравійні велосипеди",
+            },
+            doubleSuspension: {
+                value: false,
+                title: "Двопідвісні велосипеди",
+            },
+            electric: {
+                value: false,
+                title: "Электровелосипеди",
+            },
+            child: {
+                value: false,
+                title: "Дитячі",
+            }
+        },
+        price: {
+            min: 0,
+            max: 100000,
+        },
+        brands: {
+            bianci: {
+                value: false,
+                title: "Bianci",
+            },
+            bmc: {
+                value: true,
+                title: "BMC",
+            },
+            ciclistino: {
+                value: false,
+                title: "Ciclistino",
+            },
+            cipolini: {
+                value: false,
+                title: "Cipollini",
+            },
+            colnago: {
+                value: false,
+                title: "Colnago"
+            },
+            trek: {
+                value: false,
+                title: "Trek"
+            },
+            merida: {
+                value: false,
+                title: "Merida"
+            },
+        },
+        frameMaterials: {
+            aluminum: {
+                value: false,
+                title: "Алюміній",
+            },
+            carbon: {
+                value: true,
+                title: "Карбон",
+            },
+            steel: {
+                value: false,
+                title: "Сталь",
+            }
+        },
+        colors: [
+            {
+                value: "#F2F1EF",
+                isSelected: false,
+            },
+            {
+                value: "#38D5C8",
+                isSelected: false,
+            },
+            {
+                value: "#ACB690",
+                isSelected: true,
+            },
+            {
+                value: "#CC7E3B",
+                isSelected: false,
+            },
+            {
+                value: "#740222",
+                isSelected: false,
+            },
+            {
+                value: "#44ACFB",
+                isSelected: false,
+            },
+            {
+                value: "#FEF95F",
+                isSelected: false,
+            },
+            {
+                value: "#0D7F19",
+                isSelected: false,
+            },
+            {
+                value: "#FFD536",
+                isSelected: false,
+            },
+            {
+                value: "#FE7E56",
+                isSelected: false,
+            },
+            {
+                value: "#AC632C",
+                isSelected: false,
+            },
+            {
+                value: "#FD0012",
+                isSelected: false,
+            },
+            {
+                value: "#25FD3C",
+                isSelected: false,
+            },
+            {
+                value: "#353839",
+                isSelected: false,
+            },
+            {
+                value: "#FEA32A",
+                isSelected: false,
+            },
+            {
+                value: "#E5E4E2",
+                isSelected: false,
+            },
+            {
+                value: "#79526F",
+                isSelected: false,
+            },
+            {
+                value: "#FEC0CB",
+                isSelected: false,
+            },
+            {
+                value: "#BDBDBD",
+                isSelected: false,
+            },
+            {
+                value: "#7F7F7F",
+                isSelected: false,
+            },
+            {
+                value: "#0026F9",
+                isSelected: false,
+            },
+            {
+                value: "#49423D",
+                isSelected: false,
+            },
+            {
+                value: "#061E42",
+                isSelected: false,
+            },
+            {
+                value: "#8926F9",
+                isSelected: false,
+            },
+            {
+                value: "#000000",
+                isSelected: false,
+            },
+        ]
+    }
 }
 
 const shopSlice = createSlice({
     name: "shop",
     initialState,
-    reducers: {},
+    reducers: {
+        setCatalogFilter: (state, action: PayloadAction<ICatalogFilter>) => {
+            state.catalogFilter = action.payload;
+        },
+        resetCatalogFilter: (state) => {
+            state.catalogFilter = {
+                onlyInStock: false,
+                categories: {
+                    triathlon: {
+                        value: false,
+                        title: "Велосипеди для тріатлону",
+                    },
+                    mountain: {
+                        value: false,
+                        title: "Гірські велосипеди",
+                    },
+                    city: {
+                        value: false,
+                        title: "Міські велосипеди",
+                    },
+                    gravel: {
+                        value: false,
+                        title: "Гравійні велосипеди",
+                    },
+                    doubleSuspension: {
+                        value: false,
+                        title: "Двопідвісні велосипеди",
+                    },
+                    electric: {
+                        value: false,
+                        title: "Электровелосипеди",
+                    },
+                    child: {
+                        value: false,
+                        title: "Дитячі",
+                    }
+                },
+                price: {
+                    min: 0,
+                    max: 100000,
+                },
+                brands: {
+                    bianci: {
+                        value: false,
+                        title: "Bianci",
+                    },
+                    bmc: {
+                        value: false,
+                        title: "BMC",
+                    },
+                    ciclistino: {
+                        value: false,
+                        title: "Ciclistino",
+                    },
+                    cipolini: {
+                        value: false,
+                        title: "Cipollini",
+                    },
+                    colnago: {
+                        value: false,
+                        title: "Colnago"
+                    },
+                    trek: {
+                        value: false,
+                        title: "Trek"
+                    },
+                    merida: {
+                        value: false,
+                        title: "Merida"
+                    },
+                },
+                frameMaterials: {
+                    aluminum: {
+                        value: false,
+                        title: "Алюміній",
+                    },
+                    carbon: {
+                        value: false,
+                        title: "Карбон",
+                    },
+                    steel: {
+                        value: false,
+                        title: "Сталь",
+                    }
+                },
+                colors: [
+                    {
+                        value: "#F2F1EF",
+                        isSelected: false,
+                    },
+                    {
+                        value: "#38D5C8",
+                        isSelected: false,
+                    },
+                    {
+                        value: "#ACB690",
+                        isSelected: false,
+                    },
+                    {
+                        value: "#CC7E3B",
+                        isSelected: false,
+                    },
+                    {
+                        value: "#740222",
+                        isSelected: false,
+                    },
+                    {
+                        value: "#44ACFB",
+                        isSelected: false,
+                    },
+                    {
+                        value: "#FEF95F",
+                        isSelected: false,
+                    },
+                    {
+                        value: "#0D7F19",
+                        isSelected: false,
+                    },
+                    {
+                        value: "#FFD536",
+                        isSelected: false,
+                    },
+                    {
+                        value: "#FE7E56",
+                        isSelected: false,
+                    },
+                    {
+                        value: "#AC632C",
+                        isSelected: false,
+                    },
+                    {
+                        value: "#FD0012",
+                        isSelected: false,
+                    },
+                    {
+                        value: "#25FD3C",
+                        isSelected: false,
+                    },
+                    {
+                        value: "#353839",
+                        isSelected: false,
+                    },
+                    {
+                        value: "#FEA32A",
+                        isSelected: false,
+                    },
+                    {
+                        value: "#E5E4E2",
+                        isSelected: false,
+                    },
+                    {
+                        value: "#79526F",
+                        isSelected: false,
+                    },
+                    {
+                        value: "#FEC0CB",
+                        isSelected: false,
+                    },
+                    {
+                        value: "#BDBDBD",
+                        isSelected: false,
+                    },
+                    {
+                        value: "#7F7F7F",
+                        isSelected: false,
+                    },
+                    {
+                        value: "#0026F9",
+                        isSelected: false,
+                    },
+                    {
+                        value: "#49423D",
+                        isSelected: false,
+                    },
+                    {
+                        value: "#061E42",
+                        isSelected: false,
+                    },
+                    {
+                        value: "#8926F9",
+                        isSelected: false,
+                    },
+                    {
+                        value: "#000000",
+                        isSelected: false,
+                    },
+                ]
+            }
+        },
+    },
     extraReducers: (builder) => {
         builder.addCase(getNewItems.fulfilled, (state, action) => {
             state.newItems = action.payload;
@@ -157,9 +530,9 @@ const shopSlice = createSlice({
         });
         builder.addCase(getReviews.fulfilled, (state, action) => {
             state.reviews = action.payload;
-        })
+        });
     }
 });
 
-export const {} = shopSlice.actions;
+export const {setCatalogFilter, resetCatalogFilter} = shopSlice.actions;
 export default shopSlice.reducer;
