@@ -1,9 +1,20 @@
 import {createAsyncThunk, createSlice, PayloadAction} from "@reduxjs/toolkit";
-import {ICatalogFilter, ICategory, IOutfitItem, IReview, IShopItem, IShopState} from "../../types.ts";
+import {
+    ICatalogFilter,
+    ICatalogPage,
+    ICatalogPagePayload,
+    ICategory,
+    IOutfitItem,
+    IReview,
+    IShopItem,
+    IShopState
+} from "../../types.ts";
 import {newItems} from "../../data_mocup/newItems.ts";
 import categories from "../../data_mocup/categories.ts";
 import {outfitItems} from "../../data_mocup/outfitItems.ts";
 import {reviews} from "../../data_mocup/reviews.ts";
+import {catalogPage1} from "../../data_mocup/catalogPage1.ts";
+import {CatalogSortType, CatalogViewType} from "../../enums.ts";
 
 export const getBestItems = createAsyncThunk<IShopItem[], undefined, {
     rejectValue: string
@@ -130,6 +141,32 @@ export const getReviews = createAsyncThunk<IReview[], undefined, {
     }
 });
 
+export const getCatalogPage = createAsyncThunk<ICatalogPage, ICatalogPagePayload, {
+    rejectValue: string
+}>("shop/getCatalogPage", async (pageIndex, {rejectWithValue}) => {
+    try {
+        // const res = await axios.get(`/catalog/${pageIndex}?perPage=12`);
+
+        const res = {
+            pageIndex,
+            status: 200,
+            data: catalogPage1,
+        }
+
+        if (res.status === 200) {
+            return res.data;
+        } else {
+            return rejectWithValue("Failed to fetch reviews");
+        }
+    } catch (err) {
+        if (err instanceof Error) {
+            return rejectWithValue(err.message);
+        } else {
+            return rejectWithValue("Unknown error");
+        }
+    }
+});
+
 const initialState: IShopState = {
     currency: "\u{20B4}",
     bestItems: null,
@@ -145,7 +182,7 @@ const initialState: IShopState = {
                 title: "Велосипеди для тріатлону",
             },
             mountain: {
-                value: true,
+                value: false,
                 title: "Гірські велосипеди",
             },
             city: {
@@ -156,7 +193,7 @@ const initialState: IShopState = {
                 value: false,
                 title: "Гравійні велосипеди",
             },
-            doubleSuspension: {
+            trek_marlin_4_matte_anthracite_atb_29_2022: {
                 value: false,
                 title: "Двопідвісні велосипеди",
             },
@@ -179,7 +216,7 @@ const initialState: IShopState = {
                 title: "Bianci",
             },
             bmc: {
-                value: true,
+                value: false,
                 title: "BMC",
             },
             ciclistino: {
@@ -209,7 +246,7 @@ const initialState: IShopState = {
                 title: "Алюміній",
             },
             carbon: {
-                value: true,
+                value: false,
                 title: "Карбон",
             },
             steel: {
@@ -228,7 +265,7 @@ const initialState: IShopState = {
             },
             {
                 value: "#ACB690",
-                isSelected: true,
+                isSelected: false,
             },
             {
                 value: "#CC7E3B",
@@ -319,7 +356,10 @@ const initialState: IShopState = {
                 isSelected: false,
             },
         ]
-    }
+    },
+    catalogPage: null,
+    catalogSortBy: CatalogSortType.price_up,
+    catalogViewType: CatalogViewType.grid,
 }
 
 const shopSlice = createSlice({
@@ -514,6 +554,12 @@ const shopSlice = createSlice({
                 ]
             }
         },
+        setCatalogSortBy: (state, action: PayloadAction<CatalogSortType>) => {
+            state.catalogSortBy = action.payload;
+        },
+        setCatalogViewType: (state, action: PayloadAction<CatalogViewType>) => {
+            state.catalogViewType = action.payload;
+        },
     },
     extraReducers: (builder) => {
         builder.addCase(getNewItems.fulfilled, (state, action) => {
@@ -531,8 +577,16 @@ const shopSlice = createSlice({
         builder.addCase(getReviews.fulfilled, (state, action) => {
             state.reviews = action.payload;
         });
+        builder.addCase(getCatalogPage.fulfilled, (state, action) => {
+            state.catalogPage = action.payload;
+        });
     }
 });
 
-export const {setCatalogFilter, resetCatalogFilter} = shopSlice.actions;
+export const {
+    setCatalogFilter,
+    resetCatalogFilter,
+    setCatalogSortBy,
+    setCatalogViewType,
+} = shopSlice.actions;
 export default shopSlice.reducer;

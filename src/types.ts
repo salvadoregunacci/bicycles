@@ -1,3 +1,5 @@
+import {CatalogSortType, CatalogViewType} from "./enums.ts";
+
 export interface IReview {
     preview: string,
     date: number,
@@ -55,9 +57,12 @@ export interface IShopState {
     outfitItems: IOutfitItem[] | null,
     reviews: IReview[] | null,
     catalogFilter: ICatalogFilter,
+    catalogPage: ICatalogPage | null,
+    catalogSortBy: CatalogSortType,
+    catalogViewType: CatalogViewType,
 }
 
-interface IFilterItem {
+export interface IFilterItem {
     value: boolean,
     title: string,
 }
@@ -77,6 +82,26 @@ export interface ICatalogFilter {
     brands: Record<string, IFilterItem>,
     frameMaterials: Record<string, IFilterItem>,
     colors: IColor[],
+}
+
+export interface ICatalogPage {
+    currentPage: number,
+    totalPages: number,
+    nextPageUrl: string | null,
+    prevPageUrl: string | null,
+    data: IShopItem[],
+}
+
+export interface ICatalogPagePayload {
+    pageNumber: number,
+    filter: {
+        onlyInStock: boolean,
+        categories: string[],
+        price: [number, number],
+        brands: string[],
+        frameMaterials: string[],
+        colors: string[],
+    }
 }
 
 

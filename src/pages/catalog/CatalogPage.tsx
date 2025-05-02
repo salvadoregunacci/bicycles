@@ -6,6 +6,7 @@ import Breadcrumbs, {BreadcrumbsItem} from "../../components/Breadcrumbs.tsx";
 import Container from "../../components/Container.tsx";
 import Filter from "./sections/Filter.tsx";
 import Content from "./sections/Content.tsx";
+import UpBtn from "../../components/ui/UpBtn.tsx";
 
 const CatalogPage = () => {
     return (
@@ -20,6 +21,7 @@ const CatalogPage = () => {
             </SectionHeader>
             <Container>
                 <div className="catalog">
+                    <UpBtn/>
                     <Filter/>
                     <Content/>
                 </div>
