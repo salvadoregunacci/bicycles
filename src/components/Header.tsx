@@ -9,7 +9,7 @@ interface IProps extends HTMLAttributes<HTMLElement> {
     isSticky?: boolean,
 }
 
-const Header = ({isSticky = false, ...props}: IProps) => {
+const Header = ({isSticky = true, ...props}: IProps) => {
     const [colorizeVariant, setColorizeVariant] = useState(false);
 
     const handleScroll = useCallback(() => {

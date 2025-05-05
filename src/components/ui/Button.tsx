@@ -1,27 +1,31 @@
-import {ComponentPropsWithoutRef, ReactNode} from "react"
-import {Link} from "react-router-dom";
+import React from "react";
 
-export const enum ButtonVariants {
-    Primary = "primary",
-}
 
-type Props = {
-    variant?: ButtonVariants,
-    link?: string,
-    children: ReactNode,
-}
+type Props<T extends React.ElementType> = {
+    children: React.ReactNode,
+    as?: T,
+    variant?: "primary" | "secondary",
+    className?: string,
+} & React.ComponentPropsWithoutRef<T>
 
-const Button = ({children, link, className = "", variant = ButtonVariants.Primary}: ComponentPropsWithoutRef<"button"> & Props) => {
+
+const Button = <T extends React.ElementType = "button">({
+                                                            as,
+                                                            children,
+                                                            className = "",
+                                                            variant = "primary",
+                                                            ...props
+                                                        }: Props<T>) => {
+    const Component = as || "button";
+
     return (
-        link ?
-            <Link to={link} className={`btn btn-action btn-${variant} ${className}`}>
-                {children}
-            </Link>
-            :
-            <button className={`btn btn-action btn-${variant} ${className}`}>
-                {children}
-            </button>
-    );
-};
+        <Component
+            className={`btn btn-action ${variant} ${className}`}
+            {...props}
+        >
+            {children}
+        </Component>
+    )
+}
 
 export default Button;

@@ -22,8 +22,8 @@ const ReviewCard = ({
                 <time dateTime={formattedDate} className="t2">{formattedDate}</time>
                 <div className="review-card__hashtags">
                     {
-                        hashtags.map(hashtag => (
-                            <div className="review-card__hashtag">
+                        hashtags.map((hashtag, index) => (
+                            <div key={index} className="review-card__hashtag">
                                 #{hashtag}
                             </div>
                         ))

@@ -21,7 +21,7 @@ const MainPage = () => {
     return (
         <Page title="Головна" className="page_main">
             <UpBtn/>
-            <Header/>
+            <Header isSticky={false}/>
             <Promo/>
             <Marquee/>
             <News/>

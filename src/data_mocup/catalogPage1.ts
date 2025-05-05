@@ -10,6 +10,7 @@ export const catalogPage1: ICatalogPage  = {
             id: 1,
             title: "Look 977 BLACK FLUO YELLOW GREEN XT 2x11S AMC 2018",
             price: 14500,
+            oldPrice: null,
             available: true,
             country: {
                 name: "Швеція",
@@ -32,6 +33,7 @@ export const catalogPage1: ICatalogPage  = {
             id: 2,
             title: "Trek Dual Sport 2 Mulsanne Hybd 2022",
             price: 22300,
+            oldPrice: null,
             available: false,
             country: {
                 name: "Італія",
@@ -54,6 +56,7 @@ export const catalogPage1: ICatalogPage  = {
             id: 3,
             title: "Orbea ALMA H30 2021",
             price: 43000,
+            oldPrice: null,
             available: true,
             country: {
                 name: "Іспанія",
@@ -76,6 +79,7 @@ export const catalogPage1: ICatalogPage  = {
             id: 4,
             title: "Trek Fx 3 Disc Dnister Black HYBD 2022",
             price: 32500,
+            oldPrice: 3600,
             available: true,
             country: {
                 name: "Італія",
@@ -98,6 +102,7 @@ export const catalogPage1: ICatalogPage  = {
             id: 5,
             title: "Scott Scale 700 RS 2016",
             price: 16000,
+            oldPrice: null,
             available: false,
             country: {
                 name: "Франція",
@@ -120,6 +125,7 @@ export const catalogPage1: ICatalogPage  = {
             id: 6,
             title: "Look 979 BLACK FLUO YELLOW GREEN XT 2x11S AMC 2018",
             price: 62000,
+            oldPrice: null,
             available: false,
             country: {
                 name: "Італія",
@@ -133,15 +139,16 @@ export const catalogPage1: ICatalogPage  = {
             preview: "/images/bicycles/look_977_black_fluo_yellow_green_xt_2x11s_amc_2018/img_1.avif",
             photos: [
                 "/images/bicycles/look_977_black_fluo_yellow_green_xt_2x11s_amc_2018/img_1.avif",
-                "",
-                "",
-                "",
+                "/images/bicycles/look_977_black_fluo_yellow_green_xt_2x11s_amc_2018/img_2.avif",
+                "/images/bicycles/look_977_black_fluo_yellow_green_xt_2x11s_amc_2018/img_3.avif",
+                "/images/bicycles/look_977_black_fluo_yellow_green_xt_2x11s_amc_2018/img_4.avif",
             ],
         },
         {
             id: 7,
             title: "Scott Scale 700 SL 2016",
             price: 75600,
+            oldPrice: null,
             available: true,
             country: {
                 name: "Іспанія",
@@ -164,6 +171,7 @@ export const catalogPage1: ICatalogPage  = {
             id: 8,
             title: "Trek Marlin 4 Matte Anthracite ATB 29 2022",
             price: 28000,
+            oldPrice: null,
             available: true,
             country: {
                 name: "Італія",
@@ -186,6 +194,7 @@ export const catalogPage1: ICatalogPage  = {
             id: 9,
             title: "Orbea RUDE 10 Black 2022",
             price: 35000,
+            oldPrice: null,
             available: true,
             country: {
                 name: "Іспанія",
@@ -208,6 +217,7 @@ export const catalogPage1: ICatalogPage  = {
             id: 10,
             title: "Trek Marlin 5 Lithium Grey Chrome ATB 27.5 2022",
             price: 76000,
+            oldPrice: 84000,
             available: true,
             country: {
                 name: "Америка",
@@ -230,6 +240,7 @@ export const catalogPage1: ICatalogPage  = {
             id: 11,
             title: "Trek Marlin 4 Aloha ATB 27.5 2022",
             price: 82000,
+            oldPrice: null,
             available: true,
             country: {
                 name: "Америка",
@@ -252,6 +263,7 @@ export const catalogPage1: ICatalogPage  = {
             id: 12,
             title: "Scott 700 SL 2014",
             price: 46500,
+            oldPrice: null,
             available: true,
             country: {
                 name: "Іспанія",

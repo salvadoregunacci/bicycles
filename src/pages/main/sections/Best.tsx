@@ -4,13 +4,13 @@ import {useAppDispatch, useAppSelector} from "../../../hooks.ts";
 import Loader from "../../../components/ui/Loader.tsx";
 import ItemCard from "../../../components/ItemCard.tsx";
 import React, {useEffect, useRef} from "react";
-import {getBestItems} from "../../../redux/slices/shopSlice.ts";
 import {Autoplay} from "swiper/modules";
 import {Swiper as SwiperClass} from 'swiper/types';
 
 import 'swiper/css';
 import 'swiper/css/autoplay';
 import Container from "../../../components/Container.tsx";
+import {getBestItems} from "../../../redux/slices/shop/asyncThunks.ts";
 
 const Best = () => {
     const dispatch = useAppDispatch();

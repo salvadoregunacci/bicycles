@@ -2,7 +2,7 @@ import {useAppDispatch, useAppSelector} from "../../hooks.ts";
 import {useState} from "react";
 import FilterBlock from "./FilterBlock.tsx";
 import Checkbox from "../ui/Checkbox.tsx";
-import {setCatalogFilter} from "../../redux/slices/shopSlice.ts";
+import {setCatalogFilter} from "../../redux/slices/shop/slice.ts";
 import {ICatalogFilter} from "../../types.ts";
 
 interface IProps {

@@ -2,7 +2,7 @@ import FilterBlock from "./FilterBlock.tsx";
 import Range from "rc-slider";
 import {useCallback, useEffect, useRef, useState} from "react";
 import {useAppDispatch, useAppSelector} from "../../hooks.ts";
-import {setCatalogFilter} from "../../redux/slices/shopSlice.ts";
+import {setCatalogFilter} from "../../redux/slices/shop/slice.ts";
 
 const FilterPrice = () => {
     const dispatch = useAppDispatch();

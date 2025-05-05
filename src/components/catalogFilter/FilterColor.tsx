@@ -1,7 +1,7 @@
 import {useAppDispatch, useAppSelector} from "../../hooks.ts";
 import ColorPick from "../ui/ColorPick.tsx";
 import FilterBlock from "./FilterBlock.tsx";
-import {setCatalogFilter} from "../../redux/slices/shopSlice.ts";
+import {setCatalogFilter} from "../../redux/slices/shop/slice.ts";
 
 const FilterColor = () => {
     const dispatch = useAppDispatch();

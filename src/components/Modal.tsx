@@ -1,5 +1,5 @@
 import React, {ReactNode, useEffect} from "react"
-import CloseBtn from "./CloseBtn.tsx";
+import CloseBtn from "./ui/CloseBtn.tsx";
 
 type Props = {
     children: ReactNode,
@@ -7,7 +7,8 @@ type Props = {
     isCloseOverClick?: boolean,
     isCloseEscapeKey?: boolean,
     className?: string,
-    onClose: (e?: React.MouseEvent) => void
+    onClose: (e?: React.MouseEvent) => void,
+    closeBtnInBody?: boolean,
 }
 const Modal = ({
                    isActive,
@@ -15,22 +16,26 @@ const Modal = ({
                    onClose,
                    isCloseOverClick = true,
                    isCloseEscapeKey = true,
-                   className = ""
+                   className = "",
+                   closeBtnInBody = false,
                }: Props) => {
     const handleClick: React.MouseEventHandler<HTMLDivElement> = (e) => {
         if (isCloseOverClick && e.target && e.target instanceof HTMLElement && !e.target.closest(".modal__content")) {
             onClose(e);
+            document.body.style.overflowY = "";
         }
     }
 
     const handleClickCloseBtn: React.MouseEventHandler<HTMLButtonElement> = (e) => {
         onClose(e);
+        document.body.style.overflowY = "";
     }
 
     useEffect(() => {
         const handleKeydown = (e: KeyboardEvent) => {
             if (e.code === "Escape") {
                 onClose();
+                document.body.style.overflowY = "";
             }
         }
 
@@ -39,7 +44,7 @@ const Modal = ({
         }
     }, []);
 
-    useEffect(()=> {
+    useEffect(() => {
         if (isActive) {
             document.body.style.overflowY = "hidden";
         } else {
@@ -49,16 +54,28 @@ const Modal = ({
 
     return (
         <div
-            className={`modal ${className} ${isActive ? "active" : ""}`}
+            className={`modal ${className} ${closeBtnInBody ? "_close-btn-inner" : ""} ${isActive ? "active" : ""}`}
             onClick={handleClick}
         >
             <div className="modal__content">
+                {
+                    closeBtnInBody ?
+                        <CloseBtn
+                            className="modal__close-btn"
+                            onClick={handleClickCloseBtn}
+                        />
+                        : null
+                }
                 {children}
             </div>
-            <CloseBtn
-                className="modal__close-btn"
-                onClick={handleClickCloseBtn}
-            />
+            {
+                !closeBtnInBody ?
+                    <CloseBtn
+                        className="modal__close-btn"
+                        onClick={handleClickCloseBtn}
+                    />
+                    : null
+            }
         </div>
     );
 };

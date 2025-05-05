@@ -2,11 +2,11 @@ import {Swiper, SwiperSlide} from "swiper/react";
 import {Keyboard} from "swiper/modules";
 import {useAppDispatch, useAppSelector} from "../../../hooks.ts";
 import {useEffect} from "react";
-import {getReviews} from "../../../redux/slices/shopSlice.ts";
 import ReviewCard from "../../../components/ReviewCard.tsx";
 import "swiper/css";
 import {Link} from "react-router-dom";
 import Container from "../../../components/Container.tsx";
+import {getReviews} from "../../../redux/slices/shop/asyncThunks.ts";
 
 const Reviews = () => {
     const dispatch = useAppDispatch();

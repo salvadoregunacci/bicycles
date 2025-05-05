@@ -31,6 +31,7 @@ export interface IShopItem {
     id: number,
     title: string,
     price: number,
+    oldPrice: number | null,
     available: boolean,
     country: ICountry,
     brand: string,
@@ -41,7 +42,19 @@ export interface IShopItem {
     photos: string[],
 }
 
-export interface IOutfitItem extends  IShopItem {}
+export interface IItemFullInfo extends IShopItem {
+    desc: string,
+    articleId: string,
+    availableSizes: string[],
+    availableColors: string[],
+    availableCount: number,
+    isFavorite: boolean,
+    features: { title: string, value: string }[],
+    similarItems: IShopItem[] | null,
+}
+
+export interface IOutfitItem extends IShopItem {
+}
 
 export interface ICategory {
     id: number,
@@ -60,6 +73,8 @@ export interface IShopState {
     catalogPage: ICatalogPage | null,
     catalogSortBy: CatalogSortType,
     catalogViewType: CatalogViewType,
+    oneClickItem: IShopItem | null,
+    itemFullInfo: IItemFullInfo | null,
 }
 
 export interface IFilterItem {

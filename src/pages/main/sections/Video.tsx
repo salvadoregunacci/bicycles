@@ -1,4 +1,4 @@
-import Modal from "../../../components/ui/Modal.tsx";
+import Modal from "../../../components/Modal.tsx";
 import React, {useRef, useState} from "react";
 import ReactPlayer from 'react-player/lazy';
 

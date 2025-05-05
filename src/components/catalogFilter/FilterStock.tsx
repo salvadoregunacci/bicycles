@@ -1,6 +1,6 @@
 import Toggle from "../ui/Toggle.tsx";
 import {useAppDispatch, useAppSelector} from "../../hooks.ts";
-import {setCatalogFilter} from "../../redux/slices/shopSlice.ts";
+import {setCatalogFilter} from "../../redux/slices/shop/slice.ts";
 
 const FilterStock = () => {
     const dispatch = useAppDispatch();

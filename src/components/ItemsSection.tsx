@@ -13,7 +13,7 @@ import Container from "./Container.tsx";
 type Props = {
     items: IShopItem[] | null,
     title: string,
-    viewAllLink: string,
+    viewAllLink?: string,
     className?: string,
 }
 
@@ -40,12 +40,19 @@ const ItemsSection = ({items, title, viewAllLink, className = ""}: Props) => {
                                         </SwiperSlide>
                                     ))
                                 }
-                                <span slot="container-end">
-                                    <span className="items-section__view-all-wrap">
-                                        <Link to={viewAllLink}
-                                              className="items-section__view-all-btn t4">Показати всe</Link>
-                                    </span>
-                                </span>
+                                {
+                                    viewAllLink ?
+                                        <div slot="container-end">
+                                            <div className="items-section__view-all-wrap">
+                                                <Link
+                                                    to={viewAllLink}
+                                                    className="items-section__view-all-btn t4">
+                                                    Показати всe
+                                                </Link>
+                                            </div>
+                                        </div>
+                                        : null
+                                }
                             </Swiper>
                             :
                             <div className="empty-label h2">Пусто</div>

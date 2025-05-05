@@ -1,7 +1,7 @@
 import Select, {SingleValue, StylesConfig} from 'react-select';
 import {CatalogSortType, CatalogViewType} from "../../../enums.ts";
 import {useAppDispatch, useAppSelector} from "../../../hooks.ts";
-import {setCatalogSortBy, setCatalogViewType} from "../../../redux/slices/shopSlice.ts";
+import {setCatalogSortBy, setCatalogViewType} from "../../../redux/slices/shop/slice.ts";
 
 interface IOptionType {
     value: CatalogSortType,

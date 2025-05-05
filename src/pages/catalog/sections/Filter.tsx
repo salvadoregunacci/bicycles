@@ -4,7 +4,7 @@ import FilterEntity from "../../../components/catalogFilter/FilterEntity.tsx";
 import FilterStock from "../../../components/catalogFilter/FilterStock.tsx";
 import FilterColor from "../../../components/catalogFilter/FilterColor.tsx";
 import {useAppDispatch} from "../../../hooks.ts";
-import {resetCatalogFilter} from "../../../redux/slices/shopSlice.ts";
+import {resetCatalogFilter} from "../../../redux/slices/shop/slice.ts";
 
 
 const Filter = () => {

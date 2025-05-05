@@ -1,11 +1,11 @@
 import {useAppDispatch, useAppSelector} from "../../../hooks.ts";
 import {useEffect} from "react";
-import {getNewItems} from "../../../redux/slices/shopSlice.ts";
 
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/keyboard';
 import ItemsSection from "../../../components/ItemsSection.tsx";
+import {getNewItems} from "../../../redux/slices/shop/asyncThunks.ts";
 
 const News = () => {
     const newItems = useAppSelector(state => state.shop.newItems);

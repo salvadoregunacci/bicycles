@@ -1,6 +1,7 @@
 import {ReactNode, useRef} from "react";
 import Button from "../../../components/ui/Button.tsx";
 import Container from "../../../components/Container.tsx";
+import {Link} from "react-router-dom";
 
 type PresentationItem = {
     title: string,
@@ -161,7 +162,13 @@ const Presentation = () => {
                             </p>
                         </div>
 
-                        <Button className="presentation-btn" link="#">Каталог</Button>
+                        <Button
+                            as={Link}
+                            to="/catalog"
+                            className="presentation-btn"
+                        >
+                            Каталог
+                        </Button>
                     </div>
                 </div>
             </Container>

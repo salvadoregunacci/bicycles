@@ -5,6 +5,7 @@ export const outfitItems: IOutfitItem[] = [
         id: 1,
         title: "Rudy Project Airstorm Lime Fluo White Shiny",
         price: 4700,
+        oldPrice: null,
         available: true,
         country: {
             name: "Італія",
@@ -27,6 +28,7 @@ export const outfitItems: IOutfitItem[] = [
         id: 2,
         title: "Rudy Project Protera Blue Orange Matt",
         price: 5400,
+        oldPrice: null,
         available: false,
         country: {
             name: "Америка",
@@ -49,6 +51,7 @@ export const outfitItems: IOutfitItem[] = [
         id: 3,
         title: "Rudy Project Avenger Titanium Lime Matt",
         price: 5600,
+        oldPrice: null,
         available: true,
         country: {
             name: "Америка",
@@ -71,6 +74,7 @@ export const outfitItems: IOutfitItem[] = [
         id: 2,
         title: "Bianchi AQUILA L DURA ACE DI2 TEAM JUMBO 2021",
         price: 4e4,
+        oldPrice: null,
         available: false,
         country: {
             name: "Америка",
@@ -93,6 +97,7 @@ export const outfitItems: IOutfitItem[] = [
         id: 3,
         title: "Trek Marlin 7 Matte Nautical Navy Matte Anth ATB 29 2022",
         price: 51700,
+        oldPrice: null,
         available: true,
         country: {
             name: "Америка",

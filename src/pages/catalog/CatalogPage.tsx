@@ -7,16 +7,17 @@ import Container from "../../components/Container.tsx";
 import Filter from "./sections/Filter.tsx";
 import Content from "./sections/Content.tsx";
 import UpBtn from "../../components/ui/UpBtn.tsx";
+import "../../scss/pages/catalog.scss";
 
 const CatalogPage = () => {
     return (
         <Page title="Каталог" className="page_catalog">
-            <Header isSticky={true}/>
+            <Header/>
             <SectionHeader title="Гірські велосипеди">
                 <Breadcrumbs>
                     <BreadcrumbsItem link="/">Головна</BreadcrumbsItem>
                     <BreadcrumbsItem link="/catalog">Велосипеди</BreadcrumbsItem>
-                    <BreadcrumbsItem isCurrent={true}>Гірські велосипеди</BreadcrumbsItem>
+                    <BreadcrumbsItem isActive={true}>Гірські велосипеди</BreadcrumbsItem>
                 </Breadcrumbs>
             </SectionHeader>
             <Container>

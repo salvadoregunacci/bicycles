@@ -4,7 +4,7 @@ import {Autoplay, EffectFade, Pagination} from "swiper/modules";
 import 'swiper/css';
 import 'swiper/css/effect-fade';
 import 'swiper/css/pagination';
-import Button, {ButtonVariants} from "../../../components/ui/Button.tsx";
+import Button from "../../../components/ui/Button.tsx";
 import PromoCards from "../../../components/PromoCards.tsx";
 import Container from "../../../components/Container.tsx";
 
@@ -63,7 +63,6 @@ const Promo = () => {
                         </p>
                         <Button
                             link="#"
-                            variant={ButtonVariants.Primary}
                             className="promo__action-btn"
                         >
                             Детальніше

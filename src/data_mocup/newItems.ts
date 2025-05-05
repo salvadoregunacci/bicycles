@@ -5,6 +5,7 @@ export const newItems: IShopItem[] = [
         id: 1,
         title: "Bianchi AQUILA L DURA ACE DI2 TEAM JUMBO 2021",
         price: 3e5,
+        oldPrice: null,
         available: true,
         country: {
             name: "Італія",
@@ -27,6 +28,7 @@ export const newItems: IShopItem[] = [
         id: 2,
         title: "Bianchi AQUILA L DURA ACE DI2 TEAM JUMBO 2021",
         price: 4e4,
+        oldPrice: null,
         available: false,
         country: {
             name: "Америка",
@@ -49,6 +51,7 @@ export const newItems: IShopItem[] = [
         id: 3,
         title: "Trek Marlin 7 Matte Nautical Navy Matte Anth ATB 29 2022",
         price: 51700,
+        oldPrice: null,
         available: true,
         country: {
             name: "Америка",
@@ -71,6 +74,7 @@ export const newItems: IShopItem[] = [
         id: 2,
         title: "Bianchi AQUILA L DURA ACE DI2 TEAM JUMBO 2021",
         price: 4e4,
+        oldPrice: null,
         available: false,
         country: {
             name: "Америка",
@@ -93,6 +97,7 @@ export const newItems: IShopItem[] = [
         id: 3,
         title: "Trek Marlin 7 Matte Nautical Navy Matte Anth ATB 29 2022",
         price: 51700,
+        oldPrice: null,
         available: true,
         country: {
             name: "Америка",

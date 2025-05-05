@@ -1,6 +1,9 @@
 import {IShopItem} from "../types.ts";
 import {Link} from "react-router-dom";
 import Button from "./ui/Button.tsx";
+import {useAppDispatch} from "../hooks.ts";
+import {setOneClickItem} from "../redux/slices/shop/slice.ts";
+import {MouseEventHandler} from "react";
 
 type Props = {
     className?: string,
@@ -8,8 +11,16 @@ type Props = {
 }
 
 const ItemCard = ({item, className = ""}: Props) => {
+    const dispatch = useAppDispatch();
+
+    const handleClickOrderBtn: MouseEventHandler = (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+        dispatch(setOneClickItem(item));
+    }
+
     return (
-        <Link to="#" className={`item-card ${className}`}>
+        <Link to={`/item/${item.id}`} className={`item-card ${className}`}>
             <div className="item-card__content">
                 <div className="item-card__preview">
                     <img src={item.preview} alt="preview"/>
@@ -17,9 +28,19 @@ const ItemCard = ({item, className = ""}: Props) => {
 
                 <div className="item-card__wrap">
                     <div className="item-card__title sub-h3">{item.title}</div>
-                    <div
-                        className="item-card__price t1">{new Intl.NumberFormat("ua-Ua").format(item.price)} &#8372;</div>
-                    <Button className="item-card__btn">
+                    <div className="item-card__price t1">
+                        <span>{new Intl.NumberFormat("ua-Ua").format(item.price)} &#8372;</span>
+                        {
+                            item.oldPrice ?
+                                <span className="old-price">{new Intl.NumberFormat("ua-Ua").format(item.oldPrice)} &#8372;</span>
+                                :
+                                null
+                        }
+                    </div>
+                    <Button
+                        className="item-card__btn"
+                        onClick={handleClickOrderBtn}
+                    >
                         <span className="item-card__btn-wrap">
                             <svg width="18" height="21" viewBox="0 0 18 21" fill="none"
                                  xmlns="http://www.w3.org/2000/svg">

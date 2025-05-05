@@ -10,18 +10,18 @@ interface IBreadcrumbsProps extends HTMLAttributes<HTMLElement> {
 interface IBreadcrumbsItemProps {
     children: ReactNode,
     link?: string,
-    isCurrent?: boolean,
+    isActive?: boolean,
 }
 
 export const BreadcrumbsItem = ({
                                     children,
                                     link = "#",
-                                    isCurrent = false
+                                    isActive = false
                                 }: IBreadcrumbsItemProps) => {
     return (
         <Link
             to={link}
-            className={`breadcrumbs-item ${isCurrent ? "_current" : ""}`}
+            className={`breadcrumbs-item ${isActive ? "_current" : ""}`}
         >
             {children}
         </Link>

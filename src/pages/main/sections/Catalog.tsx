@@ -1,10 +1,10 @@
 import {useAppDispatch, useAppSelector} from "../../../hooks.ts";
 import Loader from "../../../components/ui/Loader.tsx";
 import {useEffect} from "react";
-import {getCategories} from "../../../redux/slices/shopSlice.ts";
 import {ICategory} from "../../../types.ts";
 import {Link} from "react-router-dom";
 import Container from "../../../components/Container.tsx";
+import {getCategories} from "../../../redux/slices/shop/asyncThunks.ts";
 
 const CatalogCard = ({name, preview}: ICategory) => {
     return (

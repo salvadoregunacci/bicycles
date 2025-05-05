@@ -1,9 +1,9 @@
 import {useAppDispatch, useAppSelector} from "../../../hooks.ts";
 import {useEffect, useState} from "react";
-import {getCatalogPage} from "../../../redux/slices/shopSlice.ts";
 import ItemCard from "../../../components/ItemCard.tsx";
 import Pagination from "../../../components/Pagination.tsx";
 import {ICatalogFilter, IFilterItem} from "../../../types.ts";
+import {getCatalogPage} from "../../../redux/slices/shop/asyncThunks.ts";
 
 
 const CatalogItems = () => {
