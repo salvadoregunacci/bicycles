@@ -14,6 +14,8 @@ import categories from "../../../data_mocup/categories.ts";
 import {reviews} from "../../../data_mocup/reviews.ts";
 import {catalogPage1} from "../../../data_mocup/catalogPage1.ts";
 import {itemFullInfo} from "../../../data_mocup/itemFullInfo.ts";
+import {cartSimilarItems} from "../../../data_mocup/cartSimilarItems.ts";
+import {RootState} from "../../store.ts";
 
 export const getItemFullInfo = createAsyncThunk<IItemFullInfo, number, {
     rejectValue: string
@@ -182,6 +184,40 @@ export const getCatalogPage = createAsyncThunk<ICatalogPage, ICatalogPagePayload
             return res.data;
         } else {
             return rejectWithValue("Failed to fetch [catalog page]");
+        }
+    } catch (err) {
+        if (err instanceof Error) {
+            return rejectWithValue(err.message);
+        } else {
+            return rejectWithValue("Unknown error");
+        }
+    }
+});
+
+export const getCartSimilarItems = createAsyncThunk<IShopItem[], undefined, {
+    state: RootState,
+    rejectValue: string
+}>("shop/getCartSimilarItems", async (_, {rejectWithValue, getState}) => {
+    try {
+        const state = getState()["shop"];
+
+        // const res = await axios.get(`/similar_items`, {
+        //     params: {
+        //         brands: state.cartItems.map(item => item.brand),
+        //         categories: state.cartItems.map(item => item.category),
+        //     }
+        // });
+
+        const res = {
+            status: 200,
+            data: cartSimilarItems,
+            state
+        }
+
+        if (res.status === 200) {
+            return res.data;
+        } else {
+            return rejectWithValue("Failed to fetch [similar items]");
         }
     } catch (err) {
         if (err instanceof Error) {

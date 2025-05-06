@@ -8,11 +8,13 @@ import {
     getItemFullInfo,
     getNewItems,
     getOutfitItems,
-    getReviews
+    getReviews,
+    getCartSimilarItems,
 } from "./asyncThunks.ts";
+import {cartItems} from "../../../data_mocup/cartItems.ts";
 
 
-const defaultCatalogState =  {
+const defaultCatalogState = {
     onlyInStock: false,
     categories: {
         triathlon: {
@@ -193,7 +195,7 @@ const defaultCatalogState =  {
             value: "#000000",
             isSelected: false,
         },
-    ]
+    ],
 }
 
 const initialState: IShopState = {
@@ -209,6 +211,8 @@ const initialState: IShopState = {
     catalogSortBy: CatalogSortType.price_up,
     catalogViewType: CatalogViewType.grid,
     itemFullInfo: null,
+    cartItems: cartItems,
+    cartSimilarItems: null,
 }
 
 const shopSlice = createSlice({
@@ -229,6 +233,24 @@ const shopSlice = createSlice({
         },
         setOneClickItem: (state, action: PayloadAction<IShopItem | null>) => {
             state.oneClickItem = action.payload;
+        },
+        removeCartItem: (state, action: PayloadAction<number>) => {
+            state.cartItems = state.cartItems.filter(item => item.id !== action.payload);
+        },
+        clearCart: (state) => {
+            state.cartItems = [];
+        },
+        changeCartItemCount: (state, action: PayloadAction<{ itemID: number, count: number }>) => {
+            state.cartItems = state.cartItems.map(item => {
+                if (item.id === action.payload.itemID) {
+                    return {
+                        ...item,
+                        count: action.payload.count,
+                    }
+                }
+
+                return item;
+            })
         },
     },
     extraReducers: (builder) => {
@@ -253,6 +275,9 @@ const shopSlice = createSlice({
         builder.addCase(getItemFullInfo.fulfilled, (state, action) => {
             state.itemFullInfo = action.payload;
         });
+        builder.addCase(getCartSimilarItems.fulfilled, (state, action) => {
+            state.cartSimilarItems = action.payload;
+        });
     }
 });
 
@@ -262,5 +287,8 @@ export const {
     setCatalogSortBy,
     setCatalogViewType,
     setOneClickItem,
+    removeCartItem,
+    changeCartItemCount,
+    clearCart,
 } = shopSlice.actions;
 export default shopSlice.reducer;

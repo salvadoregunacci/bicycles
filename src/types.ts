@@ -75,6 +75,13 @@ export interface IShopState {
     catalogViewType: CatalogViewType,
     oneClickItem: IShopItem | null,
     itemFullInfo: IItemFullInfo | null,
+    cartItems: ICartItem[],
+    cartSimilarItems: IShopItem[] | null,
+}
+
+export interface ICartItem extends IShopItem {
+    count: number,
+    maxAvailableCount: number,
 }
 
 export interface IFilterItem {

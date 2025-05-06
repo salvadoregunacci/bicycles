@@ -249,60 +249,6 @@
     align-items: center;
     column-gap: 15px;
     margin-top: 48px;
-
-    .count-select {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      width: 125px;
-      height: 52px;
-      border: 1px solid $gray-100;
-      border-radius: 10px;
-
-      .count-select__value {
-        color: $black-400;
-        user-select: none;
-      }
-
-      .count-select__handler {
-        cursor: pointer;
-        height: 100%;
-        display: flex;
-        align-items: center;
-        width: 100%;
-        user-select: none;
-
-        span {
-          display: flex;
-          transition: .3s;
-          width: 24px;
-          height: 24px;
-          align-items: center;
-          justify-content: center;
-          border-radius: 100%;
-        }
-
-        &:hover {
-          span {
-            background: $gray-100;
-          }
-        }
-      }
-
-      .up {
-        padding-right: 5px;
-        justify-content: flex-end;
-      }
-
-      .down {
-        padding-left: 5px;
-      }
-
-      .count-select__handler._disabled {
-        pointer-events: none;
-        opacity: 0.5;
-      }
-    }
   }
 
   .is-favorite {

@@ -11,6 +11,7 @@ import 'swiper/css';
 import 'swiper/css/navigation';
 import Container from "../../../components/Container.tsx";
 import Button from "../../../components/ui/Button.tsx";
+import CountSelect from "../../../components/ui/CountSelect.tsx";
 
 const Promo = () => {
     const productInfo = useAppSelector(state => state.shop.itemFullInfo);
@@ -185,23 +186,12 @@ const Promo = () => {
                                 </div>
                             </div>
                             <div className="order-row">
-                                <div className="count-select">
-                                    <div
-                                        className={`count-select__handler down t1 ${itemsCount <= 1 ? "_disabled" : ""}`}
-                                        onClick={() => setItemsCount(prev => prev - 1)}
-                                    >
-                                        <span>-</span>
-                                    </div>
-                                    <div className="count-select__value t1">
-                                        {itemsCount}
-                                    </div>
-                                    <div
-                                        className={`count-select__handler up t1  ${itemsCount >= productInfo.availableCount ? "_disabled" : ""}`}
-                                        onClick={() => setItemsCount(prev => prev + 1)}
-                                    >
-                                        <span>+</span>
-                                    </div>
-                                </div>
+                                <CountSelect
+                                    onUp={() => setItemsCount(prev => prev + 1)}
+                                    onDown={() => setItemsCount(prev => prev - 1)}
+                                    value={itemsCount}
+                                    maxCount={productInfo.availableCount}
+                                />
                                 <Button>До кошика</Button>
                                 <button
                                     className={`is-favorite ${isFavorite ? "_selected" : ""}`}

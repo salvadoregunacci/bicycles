@@ -15,9 +15,10 @@ type Props = {
     title: string,
     viewAllLink?: string,
     className?: string,
+    itemsPerView?: number,
 }
 
-const ItemsSection = ({items, title, viewAllLink, className = ""}: Props) => {
+const ItemsSection = ({items, title, viewAllLink, itemsPerView = 3, className = ""}: Props) => {
     return (
         <section className={`section items-section ${className}`}>
             <Container>
@@ -28,7 +29,7 @@ const ItemsSection = ({items, title, viewAllLink, className = ""}: Props) => {
                             <Swiper
                                 modules={[Navigation, Keyboard]}
                                 spaceBetween={40}
-                                slidesPerView={3}
+                                slidesPerView={itemsPerView}
                                 className="items-section__slider"
                                 navigation
                                 keyboard

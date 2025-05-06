@@ -21,7 +21,7 @@ const HeaderControls = () => {
                         stroke="white" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
                 </svg>
             </LinkIcon>
-            <LinkIcon to="#" includeNew={true} title="Кошик">
+            <LinkIcon to="/cart" includeNew={true} title="Кошик">
                 <svg width="21" height="20" viewBox="0 0 21 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M16 15H5.5L3.5 1H1" stroke="white" strokeWidth="1.5" strokeLinecap="round"
                           strokeLinejoin="round"/>
