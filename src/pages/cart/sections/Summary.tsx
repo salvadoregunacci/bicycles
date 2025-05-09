@@ -1,10 +1,11 @@
 import {useAppSelector} from "../../../hooks.ts";
 import Button from "../../../components/ui/Button.tsx";
+import {Link} from "react-router-dom";
 
 const Summary = () => {
-    const cartItems = useAppSelector(state => state.shop.cartItems);
-    const summary = Number(cartItems.reduce((prev, item) => prev + (item.price * item.count), 0));
-    const sale = 5000;
+    const totalSale = useAppSelector(state => state.shop.cartTotalSale);
+    const totalPrice = useAppSelector(state => state.shop.cartTotalPrice);
+    const currency = useAppSelector(state => state.shop.currency);
 
     return (
         <div className="cart-summary">
@@ -15,22 +16,29 @@ const Summary = () => {
                 </div>
                 <div className="cart-summary__row">
                     <div className="cart-summary__row-title t3">Сума замовлення (без знижки):</div>
-                    <div className="cart-summary__row-value t3">{summary.toLocaleString("ru-RU")} &#8372;</div>
-                </div>
-                <div className="cart-summary__row">
-                    <div className="cart-summary__row-title t3">Знижка:</div>
                     <div className="cart-summary__row-value t3">
-                        {Number(sale).toLocaleString("ru-RU")} &#8372;
+                        {Number(totalPrice).toLocaleString("ru-RU")} {currency}
                     </div>
                 </div>
+                {
+                    totalSale > 0 ?
+                        <div className="cart-summary__row">
+                            <div className="cart-summary__row-title t3">Знижка:</div>
+                            <div className="cart-summary__row-value t3">
+                                {Number(totalSale).toLocaleString("ru-RU")} {currency}
+                            </div>
+                        </div>
+                        :
+                        null
+                }
             </div>
             <div className="cart-summary__total">
                 <div className="cart-summary__total-title">Всього:</div>
                 <div className="cart-summary__total-value">
-                    {((summary - sale) <= 0 ? 0 : (summary - sale)).toLocaleString("ru-RU")} &#8372;
+                    {(totalPrice <= 0 ? 0 : totalPrice).toLocaleString("ru-RU")} {currency}
                 </div>
             </div>
-            <Button className="place-order">
+            <Button as={Link} to="/order" className="place-order">
                 Оформити замовлення
             </Button>
         </div>

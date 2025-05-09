@@ -29,7 +29,7 @@ const CartPage = () => {
     }
 
     return (
-        <Page title="Корзина" className="cart-page">
+        <Page title="Кошик" className="cart-page">
             <Header/>
             <Container className="cart-page__container">
                 <Breadcrumbs>

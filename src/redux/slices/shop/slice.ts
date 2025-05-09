@@ -1,20 +1,21 @@
 import {createSlice, PayloadAction} from "@reduxjs/toolkit";
-import {ICatalogFilter, IShopItem, IShopState} from "../../../types.ts";
+import {ICartItem, ICatalogFilter, IShopItem, IShopState} from "../../../types.ts";
 import {CatalogSortType, CatalogViewType} from "../../../enums.ts";
 import {
     getBestItems,
+    getCartSimilarItems,
     getCatalogPage,
     getCategories,
     getItemFullInfo,
     getNewItems,
     getOutfitItems,
     getReviews,
-    getCartSimilarItems,
 } from "./asyncThunks.ts";
+import {getTotalPrice, getTotalSale} from "../../../helpers.ts";
 import {cartItems} from "../../../data_mocup/cartItems.ts";
 
 
-const defaultCatalogState = {
+const defaultCatalogFilterState = {
     onlyInStock: false,
     categories: {
         triathlon: {
@@ -206,13 +207,16 @@ const initialState: IShopState = {
     outfitItems: null,
     reviews: null,
     oneClickItem: null,
-    catalogFilter: defaultCatalogState,
+    catalogFilter: defaultCatalogFilterState,
     catalogPage: null,
     catalogSortBy: CatalogSortType.price_up,
     catalogViewType: CatalogViewType.grid,
     itemFullInfo: null,
-    cartItems: cartItems,
+    cartItems: cartItems, // TODO: в продакш установить: []
     cartSimilarItems: null,
+    cartTotalPrice: getTotalPrice(cartItems) - getTotalSale(cartItems), // TODO: в продакш установить: 0
+    cartTotalSale: getTotalSale(cartItems), // TODO: в продакш установить: 0,
+    novaPoshtaApiKey: "a43d5f8dce21ab55d386bd285212ec2c", // TODO: найти номер для API
 }
 
 const shopSlice = createSlice({
@@ -223,7 +227,7 @@ const shopSlice = createSlice({
             state.catalogFilter = action.payload;
         },
         resetCatalogFilter: (state) => {
-            state.catalogFilter = defaultCatalogState;
+            state.catalogFilter = defaultCatalogFilterState;
         },
         setCatalogSortBy: (state, action: PayloadAction<CatalogSortType>) => {
             state.catalogSortBy = action.payload;
@@ -236,9 +240,14 @@ const shopSlice = createSlice({
         },
         removeCartItem: (state, action: PayloadAction<number>) => {
             state.cartItems = state.cartItems.filter(item => item.id !== action.payload);
+            const sale = getTotalSale(state.cartItems);
+            state.cartTotalSale = sale;
+            state.cartTotalPrice = getTotalPrice(state.cartItems) - sale;
         },
         clearCart: (state) => {
             state.cartItems = [];
+            state.cartTotalSale = 0;
+            state.cartTotalPrice = 0;
         },
         changeCartItemCount: (state, action: PayloadAction<{ itemID: number, count: number }>) => {
             state.cartItems = state.cartItems.map(item => {
@@ -250,7 +259,17 @@ const shopSlice = createSlice({
                 }
 
                 return item;
-            })
+            });
+
+            const sale = getTotalSale(state.cartItems);
+            state.cartTotalSale = sale;
+            state.cartTotalPrice = getTotalPrice(state.cartItems) - sale;
+        },
+        addItemToCart: (state, action: PayloadAction<ICartItem>) => {
+            state.cartItems.push(action.payload);
+            const sale = getTotalSale(state.cartItems);
+            state.cartTotalSale = sale;
+            state.cartTotalPrice = getTotalPrice(state.cartItems) - sale;
         },
     },
     extraReducers: (builder) => {
@@ -290,5 +309,6 @@ export const {
     removeCartItem,
     changeCartItemCount,
     clearCart,
+    addItemToCart,
 } = shopSlice.actions;
 export default shopSlice.reducer;

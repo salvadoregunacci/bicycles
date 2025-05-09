@@ -1,7 +1,7 @@
 import {IShopItem} from "../types.ts";
 import {Link} from "react-router-dom";
 import Button from "./ui/Button.tsx";
-import {useAppDispatch} from "../hooks.ts";
+import {useAppDispatch, useAppSelector} from "../hooks.ts";
 import {setOneClickItem} from "../redux/slices/shop/slice.ts";
 import {MouseEventHandler} from "react";
 
@@ -12,6 +12,7 @@ type Props = {
 
 const ItemCard = ({item, className = ""}: Props) => {
     const dispatch = useAppDispatch();
+    const currency = useAppSelector(state => state.shop.currency);
 
     const handleClickOrderBtn: MouseEventHandler = (e) => {
         e.preventDefault();
@@ -29,10 +30,10 @@ const ItemCard = ({item, className = ""}: Props) => {
                 <div className="item-card__wrap">
                     <div className="item-card__title sub-h3">{item.title}</div>
                     <div className="item-card__price t1">
-                        <span>{new Intl.NumberFormat("ua-Ua").format(item.price)} &#8372;</span>
+                        <span>{new Intl.NumberFormat("ua-Ua").format(item.price)} {currency}</span>
                         {
                             item.oldPrice ?
-                                <span className="old-price">{new Intl.NumberFormat("ua-Ua").format(item.oldPrice)} &#8372;</span>
+                                <span className="old-price">{new Intl.NumberFormat("ua-Ua").format(item.oldPrice)} {currency}</span>
                                 :
                                 null
                         }

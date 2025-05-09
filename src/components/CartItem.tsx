@@ -1,6 +1,6 @@
 import {ICartItem} from "../types.ts";
 import CountSelect from "./ui/CountSelect.tsx";
-import {useAppDispatch} from "../hooks.ts";
+import {useAppDispatch, useAppSelector} from "../hooks.ts";
 import {changeCartItemCount, removeCartItem} from "../redux/slices/shop/slice.ts";
 
 interface IProps {
@@ -9,6 +9,7 @@ interface IProps {
 
 const CartItem = ({item}: IProps) => {
     const dispatch = useAppDispatch();
+    const currency = useAppSelector(state => state.shop.currency);
 
     const handleChangeCount = (action: "up" | "down") => {
         dispatch(changeCartItemCount({
@@ -37,12 +38,12 @@ const CartItem = ({item}: IProps) => {
             />
             <div className="cart-item__price">
                 <span className="current sub-h">
-                    {Number(item.price).toLocaleString("ru-RU")} &#8372;
+                    {Number(item.price).toLocaleString("ru-RU")} {currency}
                 </span>
                 {
                     item.oldPrice ?
                         <span className="old">
-                            {Number(item.oldPrice).toLocaleString("ru-RU")} &#8372;
+                            {Number(item.oldPrice).toLocaleString("ru-RU")} {currency}
                         </span>
                         : null
                 }

@@ -77,6 +77,9 @@ export interface IShopState {
     itemFullInfo: IItemFullInfo | null,
     cartItems: ICartItem[],
     cartSimilarItems: IShopItem[] | null,
+    cartTotalPrice: number,
+    cartTotalSale: number,
+    novaPoshtaApiKey: string,
 }
 
 export interface ICartItem extends IShopItem {
@@ -126,5 +129,117 @@ export interface ICatalogPagePayload {
     }
 }
 
+export interface ICity {
+    Description: string;
+    DescriptionRu: string;
+    Ref: string;
+    Delivery1: string;
+    Delivery2: string;
+    Delivery4: string;
+    Delivery5: string;
+    Delivery3: string;
+    Delivery6: string;
+    Delivery7: string;
+    Area: string;
+    SettlementType: string;
+    IsBranch: string;
+    PreventEntryNewStreetsUser: string;
+    Conglomerates: string;
+    CityID: string;
+    SettlementTypeDescriptionRu: string;
+    SettlementTypeDescription: string;
+}
 
+export interface ICityApiResponse {
+    data: ICity[];
+}
 
+interface IDimensions {
+    [key: string]: any;
+}
+
+interface ISchedule {
+    [key: string]: any;
+}
+
+export interface IWarehouse {
+    SiteKey: string;
+    Description: string;
+    DescriptionRu: string;
+    ShortAddress: string;
+    ShortAddressRu: string;
+    Phone: string;
+    TypeOfWarehouse: string;
+    Ref: string;
+    Number: string;
+    CityRef: string;
+    CityDescription: string;
+    CityDescriptionRu: string;
+    SettlementRef: string;
+    SettlementDescription: string;
+    SettlementAreaDescription: string;
+    SettlementRegionsDescription: string;
+    SettlementTypeDescription: string;
+    SettlementTypeDescriptionRu: string;
+    Longitude: number;
+    Latitude: number;
+    PostFinance: string;
+    BicycleParking: string;
+    PaymentAccess: string;
+    POSTerminal: string;
+    InternationalShipping: string;
+    SelfServiceWorkplacesCount: string;
+    TotalMaxWeightAllowed: string;
+    PlaceMaxWeightAllowed: string;
+    SendingLimitationsOnDimensions: IDimensions;
+    ReceivingLimitationsOnDimensions: IDimensions;
+    Reception: ISchedule;
+    Delivery: ISchedule;
+    Schedule: ISchedule;
+    DistrictCode: string;
+    WarehouseStatus: string;
+    WarehouseStatusDate: string;
+    CategoryOfWarehouse: string;
+    RegionCity: string;
+    WarehouseForAgent: string;
+    MaxDeclaredCost: string;
+    DenyToSelect: string;
+    PostMachineType: "None" | "FullDayService" | "PartTime" | "ForResidentOfEntrance" | "Private" | "LimitedAccess";
+    PostalCodeUA: string;
+    OnlyReceivingParcel: string;
+    WarehouseIndex: string;
+}
+
+export interface IWarehouseApiResponse {
+    data: IWarehouse[],
+}
+
+export type DeliveryMethod = "novaposhta" | "courier";
+export type PayMethod = "receipt" | "card";
+
+export interface IOrderInfo {
+    firstname: string,
+    lastname: string,
+    telephone: string,
+    email: string,
+    address: string,
+    searchCity: string,
+    selectedCity: string,
+    cityList: string[],
+    searchWarehouse: string,
+    selectedWarehouse: string,
+    warehouseList: string[],
+    deliveryMethod: DeliveryMethod,
+    payMethod: PayMethod,
+}
+
+export type DeliveryRequiredField = keyof Pick<IOrderInfo, "firstname" | "lastname" | "telephone" | "address" | "selectedCity" | "selectedWarehouse">
+export type DeliveryErrors = Partial<Record<DeliveryRequiredField, string>>;
+export interface IOrderState extends IOrderInfo {
+    deliveryErrors: DeliveryErrors,
+}
+
+export type DebounceFn = <T extends (...args: any[]) => any>(
+    func: T,
+    delay: number
+) => (...args: Parameters<T>) => any;

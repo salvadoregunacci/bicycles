@@ -42,6 +42,9 @@ const CatalogControls = () => {
         option: (styles, {isSelected}) => ({
             ...styles,
             backgroundColor: isSelected ? "#EB6B16" : "",
+            "&:hover": {
+                backgroundColor: isSelected ? "#EB6B16" : "rgba(235,107,22,0.4)",
+            }
         }),
         singleValue: (styles) => ({
             ...styles,

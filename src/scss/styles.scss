@@ -199,19 +199,42 @@ body {
   }
 }
 
-.input {
-  height: 46px;
-  border-radius: 5px;
-  padding: 0 16px;
-  border: none;
-  outline: none;
+.input-wrap {
+  display: inline-flex;
+  flex-direction: column;
 
-  &:focus {
-    outline: 2px solid $orange-200;
+  .input-error {
+    color: $red-100;
+    font-size: 14px;
+    margin-top: 4px;
   }
 
-  &::placeholder {
-    color: $gray-200;
+  .input {
+    height: 46px;
+    border-radius: 5px;
+    padding: 0 16px;
+    border: none;
+    outline: 1px solid $gray-100;
+    outline-offset: -1px;
+    transition: .3s outline-color;
+
+    &:hover {
+      outline: 1px solid $gray-200;
+    }
+
+    &:focus {
+      outline: 1px solid $orange-200;
+    }
+
+    &::placeholder {
+      color: $gray-200;
+    }
+  }
+}
+
+.input-wrap._error {
+  .input {
+    outline-color: $red-100;
   }
 }
 
@@ -815,6 +838,56 @@ body {
   }
 }
 
+.section_mailing {
+  margin-top: 130px;
+  padding: 40px 0;
+  background-color: $black-300;
+  background-image: image-set(
+                  url("../assets/images/main/mailing/bg@1x.avif") 1x,
+                  url("../assets/images/main/mailing/bg@2x.avif") 2x,
+                  url("../assets/images/main/mailing/bg@1x.webp") 1x,
+                  url("../assets/images/main/mailing/bg@2x.webp") 2x
+  );
+  background-repeat: no-repeat;
+  background-position: 90% center;
+  background-size: contain;
+
+  h2 {
+    color: $white-100;
+  }
+
+  .container {
+    position: relative;
+  }
+}
+
+.mailing__form {
+  margin-top: 32px;
+
+  .input {
+    width: 100%;
+    &:focus {
+      outline: 2px solid $orange-200;
+    }
+  }
+}
+
+.mailing__form-row {
+  display: flex;
+  align-items: center;
+  column-gap: 16px;
+}
+
+.mailing__input {
+  max-width: 346px;
+  width: 100%;
+}
+
+.mailing__checkbox {
+  margin-top: 14px;
+  color: $white-100;
+}
+
 .footer {
   background: $black-400;
   padding-top: 90px;
@@ -1169,4 +1242,64 @@ body {
     pointer-events: none;
     opacity: 0.5;
   }
+}
+
+.radio {
+  display: inline-flex;
+  align-items: center;
+  column-gap: 8px;
+  cursor: pointer;
+
+  .radio-handler {
+    display: inline-block;
+    width: 24px;
+    height: 24px;
+    min-width: 24px;
+    min-height: 24px;
+    border-radius: 100%;
+    border: 1px solid $gray-200;
+    transition: .2s;
+  }
+
+  .radio-input:checked + .radio-handler {
+    border: 8px solid $orange-100;
+  }
+
+  .radio-label {
+    color: $gray-300;
+  }
+}
+
+.text-area {
+  width: 100%;
+  border: none;
+  outline: 1px solid $gray-100;
+  transition: .2s outline-color;
+  background: $white-200;
+  resize: vertical;
+  border-radius: 5px;
+  padding: 8px 16px;
+
+  &::placeholder {
+    color: $gray-200;
+  }
+
+  &:hover {
+    outline-color: $gray-200;
+  }
+}
+
+.err-msg {
+  display: none;
+  column-gap: 10px;
+  align-items: center;
+  border: 1px solid $red-100;
+  padding: 8px 12px;
+  border-radius: 5px;
+  color: $red-100;
+  font-weight: 500;
+}
+
+.err-msg._active {
+  display: inline-flex;
 }
