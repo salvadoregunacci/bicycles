@@ -13,7 +13,7 @@ const CatalogPage = () => {
     return (
         <Page title="Каталог" className="page_catalog">
             <Header/>
-            <SectionHeader title="Гірські велосипеди">
+            <SectionHeader title="Гірські велосипеди" className="section-header_catalog">
                 <Breadcrumbs>
                     <BreadcrumbsItem link="/">Головна</BreadcrumbsItem>
                     <BreadcrumbsItem link="/catalog">Велосипеди</BreadcrumbsItem>

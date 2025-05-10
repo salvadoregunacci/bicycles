@@ -1,0 +1,134 @@
+@import "../variables";
+
+.contacts-page {
+  .section-header_contacts {
+    background-image: image-set(
+                    url("../../assets/images/sections_headers/contacts@1x.avif") 1x,
+                    url("../../assets/images/sections_headers/contacts@2x.avif") 2x,
+                    url("../../assets/images/sections_headers/contacts@1x.webp") 1x,
+                    url("../../assets/images/sections_headers/contacts@2x.webp") 2x
+    );
+  }
+
+  .info {
+    padding-top: 40px;
+
+    .container {
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .info-block:not(:first-child) {
+      margin-top: 24px;
+    }
+
+    .info-list {
+      margin-top: 15px;
+    }
+
+    a {
+      text-decoration: none;
+      color: $black-400;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+
+    .info-details {
+      display: flex;
+      flex-direction: column;
+      row-gap: 8px;
+      margin-top: 16px;
+
+      li {
+        display: flex;
+        justify-content: space-between;
+        column-gap: 100px;
+
+        .title {
+          color: $gray-300;
+        }
+
+        .value {
+          color: $black-400;
+        }
+      }
+    }
+  }
+
+  .map-bg {
+    margin-top: 160px;
+    display: inline-block;
+  }
+
+  .contact-form {
+    margin-top: 60px;
+    padding-top: 52px;
+    padding-bottom: 52px;
+    background-image: image-set(
+                    url("../../assets/images/contacts/form_bg@1x.avif") 1x,
+                    url("../../assets/images/contacts/form_bg@2x.avif") 2x,
+                    url("../../assets/images/contacts/form_bg@1x.webp") 1x,
+                    url("../../assets/images/contacts/form_bg@2x.webp") 2x
+    );
+    background-color: $orange-100;
+    background-size: contain;
+    background-position: center right;
+    background-repeat: no-repeat;
+
+    .content {
+      max-width: 610px;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+      row-gap: 15px;
+      margin-top: 32px;
+
+      .text-area {
+        min-height: 150px;
+      }
+    }
+
+    .submit-btn {
+      background: $white-100;
+      color: $orange-100;
+      margin-top: 15px;
+
+      &:hover {
+        background: $gray-100;
+      }
+    }
+
+    .row {
+      display: flex;
+      width: 100%;
+      column-gap: 15px;
+
+      .input-wrap {
+        width: 100%;
+      }
+    }
+
+    h2 {
+      color: $white-100;
+    }
+  }
+
+  .questions {
+    margin-top: 120px;
+  }
+
+  .questions-wrap {
+    margin-top: 50px;
+    display: flex;
+    flex-direction: column;
+    row-gap: 15px;
+  }
+
+  .section_mailing {
+    margin-top: 0;
+  }
+}

@@ -1303,3 +1303,111 @@ body {
 .err-msg._active {
   display: inline-flex;
 }
+
+.section_marquee {
+  padding-top: 60px;
+  padding-bottom: 60px;
+}
+
+.marquee {
+  display: flex;
+  align-items: center;
+  column-gap: 80px;
+  padding-left: 80px;
+
+  .brand {
+    height: 40px;
+  }
+
+  .brand_wahoo {
+    width: 233px;
+    height: 75px;
+    transform: translateY(-6px);
+  }
+
+  .brand_tacx {
+    width: 125px;
+    height: 45px;
+  }
+}
+
+.marquee-container {
+  overflow: hidden;
+  width: 100%;
+}
+
+.marquee-line {
+  display: flex;
+  flex-wrap: nowrap;
+  animation: marquee 10s linear infinite;
+  width: fit-content;
+}
+
+@keyframes marquee {
+  0% {
+    transform: translateX(-50%);
+  }
+  100% {
+    transform: translateX(0%);
+  }
+}
+
+.upper-case {
+  text-transform: uppercase;
+}
+
+.accordeon {
+  .accordeon__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: $white-200;
+    border: 1px solid $gray-100;
+    border-radius: 10px;
+    padding: 0 32px;
+    height: 70px;
+    cursor: pointer;
+    transition: .3s;
+
+    &:hover {
+      background: #f1f1f1;
+    }
+
+    .icon {
+      transition: .3s;
+    }
+  }
+
+  .accordeon__body {
+    max-height: 0;
+    overflow: hidden;
+    transition: .3s;
+    padding: 0 32px;
+    border-right: 1px solid transparent;
+    border-left: 1px solid transparent;
+    border-bottom: 1px solid transparent;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+  }
+}
+
+.accordeon._active {
+  .accordeon__body {
+    padding: 24px 32px;
+    border-right: 1px solid $orange-100;
+    border-left: 1px solid $orange-100;
+    border-bottom: 1px solid $orange-100;
+  }
+
+  .accordeon__header {
+    border-color: $orange-100;
+    background: $orange-100;
+    color: $white-100;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+
+    .icon {
+      transform: rotate(180deg);
+    }
+  }
+}

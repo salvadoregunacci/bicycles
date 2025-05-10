@@ -124,54 +124,6 @@
   }
 }
 
-.section_marquee {
-  padding-top: 60px;
-  padding-bottom: 60px;
-}
-
-.marquee {
-  display: flex;
-  align-items: center;
-  column-gap: 80px;
-  padding-left: 80px;
-
-  .brand {
-    height: 40px;
-  }
-
-  .brand_wahoo {
-    width: 233px;
-    height: 75px;
-    transform: translateY(-6px);
-  }
-
-  .brand_tacx {
-    width: 125px;
-    height: 45px;
-  }
-}
-
-.marquee-container {
-  overflow: hidden;
-  width: 100%;
-}
-
-.marquee-line {
-  display: flex;
-  flex-wrap: nowrap;
-  animation: marquee 10s linear infinite;
-  width: fit-content;
-}
-
-@keyframes marquee {
-  0% {
-    transform: translateX(-50%);
-  }
-  100% {
-    transform: translateX(0%);
-  }
-}
-
 .section_news {
   background: $white-200;
 }

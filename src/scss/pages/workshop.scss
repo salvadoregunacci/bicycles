@@ -1,0 +1,86 @@
+@import "../variables";
+
+.workshop-page {
+  .section-header_wrokshop {
+    background-image: image-set(
+                    url("../../assets/images/sections_headers/workshop@1x.webp") 1x,
+                    url("../../assets/images/sections_headers/workshop@2x.webp") 2x,
+                    url("../../assets/images/sections_headers/workshop@1x.avif") 1x,
+                    url("../../assets/images/sections_headers/workshop@2x.avif") 2x
+    );
+  }
+
+  .basic-services {
+    padding-top: 64px;
+
+    .wrap {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-top: 48px;
+      column-gap: 40px;
+    }
+
+    .block {
+      width: 100%;
+      border: 1px solid $gray-100;
+      border-radius: 10px;
+    }
+
+    .row {
+      display: flex;
+      width: 100%;
+      justify-content: space-between;
+      align-items: center;
+      column-gap: 100px;
+      padding: 24px;
+
+      .title {
+        color: $black-400;
+      }
+
+      .value {
+        color: $gray-400;
+      }
+    }
+
+    .row:not(:last-child) {
+      border-bottom: 1px solid $gray-100;
+    }
+  }
+
+  .extra-services {
+    margin-top: 80px;
+
+    .accordeon {
+      li {
+        display: flex;
+        align-items: center;
+        width: 100%;
+        justify-content: space-between;
+        color: $gray-400;
+        padding: 16px 0;
+      }
+
+      li:first-child {
+        padding-top: 0;
+      }
+
+      li:not(:last-child) {
+        border-bottom: 1px solid $gray-100;
+      }
+    }
+
+    .extra-services__body {
+      display: flex;
+      flex-direction: column;
+      row-gap: 15px;
+      margin-top: 40px;
+    }
+  }
+
+  .section_marquee {
+    padding-top: 150px;
+    padding-bottom: 0;
+  }
+}

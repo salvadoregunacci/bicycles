@@ -1,5 +1,6 @@
 import ContactsList from "../../../components/ContactsList.tsx";
 import Container from "../../../components/Container.tsx";
+import Map from "../../../components/Map.tsx";
 
 const Contacts = () => {
     return (
@@ -7,18 +8,7 @@ const Contacts = () => {
             <Container>
                 <h2>Контакти</h2>
             </Container>
-            <picture>
-                <source
-                    srcSet="/images/main/map/bg@1x.avif, /images/main/map/bg@2x.avif 2x"
-                    type="image/avif"
-                />
-                <img
-                    src="/images/main/map/bg@1x.webp"
-                    srcSet="/images/main/map/bg@2x.webp"
-                    alt="map"
-                    className="map-bg"
-                />
-            </picture>
+            <Map/>
             <ContactsList/>
         </section>
     );

@@ -2,7 +2,7 @@ import Page from "../Page.tsx";
 import Promo from "./sections/Promo.tsx";
 import "../../scss/pages/main.scss";
 import Header from "../../components/Header.tsx";
-import Marquee from "./sections/Marquee.tsx";
+import Marquee from "../../components/Marquee.tsx";
 import News from "./sections/News.tsx";
 import Catalog from "./sections/Catalog.tsx";
 import Blog from "./sections/Blog.tsx";

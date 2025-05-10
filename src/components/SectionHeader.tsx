@@ -10,7 +10,7 @@ interface IProps extends HTMLAttributes<HTMLElement> {
 const SectionHeader = ({title, children, className = "", ...props}: IProps) => {
     return (
         <section
-            className={`section-header section-header_catalog ${className}`}
+            className={`section-header ${className}`}
             {...props}
         >
             <Container>
