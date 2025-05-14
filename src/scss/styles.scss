@@ -1411,3 +1411,30 @@ body {
     }
   }
 }
+
+.socials {
+  margin-top: 40px;
+  display: flex;
+  align-items: center;
+  column-gap: 15px;
+
+  .socials__item {
+    background: $black-100;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 100%;
+
+    path {
+      transition: .3s;
+    }
+
+    &:hover {
+      path {
+        fill: $orange-100;
+      }
+    }
+  }
+}

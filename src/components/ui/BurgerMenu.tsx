@@ -76,7 +76,7 @@ const BurgerMenu = () => {
                 <h3>Додат. інформація</h3>
                 <nav>
                     <ul>
-                        <li><Link to="#" className="sub-h2">Про нас</Link></li>
+                        <li><Link to="/about" className="sub-h2">Про нас</Link></li>
                         <li><Link to="/workshop" className="sub-h2">Веломайстерня</Link></li>
                         <li><Link to="#" className="sub-h2">Зберігання</Link></li>
                         <li><Link to="#" className="sub-h2">Гарантії</Link></li>

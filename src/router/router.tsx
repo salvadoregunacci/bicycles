@@ -6,6 +6,7 @@ import CartPage from "../pages/cart/CartPage.tsx";
 import OrderPage from "../pages/order/OrderPage.tsx";
 import ContactsPage from "../pages/contacts/ContactsPage.tsx";
 import WorkshopPage from "../pages/workshop/WorkshopPage.tsx";
+import AboutPage from "../pages/about/AboutPage.tsx";
 
 export const router = createBrowserRouter([
     {
@@ -35,5 +36,9 @@ export const router = createBrowserRouter([
     {
         path: "/workshop",
         element: <WorkshopPage/>,
+    },
+    {
+        path: "/about",
+        element: <AboutPage/>,
     },
 ]);
