@@ -1,8 +1,8 @@
-import Container from "../../../components/Container.tsx";
+import Container from "./Container.tsx";
 
-const Info = () => {
+const ContactsInfo = () => {
     return (
-        <section className="info">
+        <section className="contacts-info">
             <Container>
                 <div className="info-wrap">
                     <div className="info-block">
@@ -77,7 +77,7 @@ const Info = () => {
                         </li>
                         <li className="t3">
                             <div className="title">Кореспондентський рахунок:</div>
-                            <div className="value"> 32009100000026</div>
+                            <div className="value">32009100000026</div>
                         </li>
                         <li className="t3">
                             <div className="title">BIC:</div>
@@ -90,4 +90,4 @@ const Info = () => {
     );
 };
 
-export default Info;
+export default ContactsInfo;

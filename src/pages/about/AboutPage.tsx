@@ -9,6 +9,10 @@ import Promo from "./sections/Promo.tsx";
 import Desc from "./sections/Desc.tsx";
 import Best from "./sections/Best.tsx";
 import Brands from "./sections/Brands.tsx";
+import Call from "./sections/Call.tsx";
+import Team from "./sections/Team.tsx";
+import Gallery from "./sections/Gallery.tsx";
+import Contacts from "./sections/Contacts.tsx";
 
 const AboutPage = () => {
     return (
@@ -24,6 +28,10 @@ const AboutPage = () => {
             <Desc/>
             <Best/>
             <Brands/>
+            <Call/>
+            <Team/>
+            <Gallery/>
+            <Contacts/>
             <Marquee/>
             <Footer/>
         </Page>

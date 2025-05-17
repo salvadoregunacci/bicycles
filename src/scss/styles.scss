@@ -866,6 +866,7 @@ body {
 
   .input {
     width: 100%;
+
     &:focus {
       outline: 2px solid $orange-200;
     }
@@ -1434,6 +1435,53 @@ body {
     &:hover {
       path {
         fill: $orange-100;
+      }
+    }
+  }
+}
+
+.contacts-info {
+  padding-top: 40px;
+
+  .container {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .info-block:not(:first-child) {
+    margin-top: 24px;
+  }
+
+  .info-list {
+    margin-top: 15px;
+  }
+
+  a {
+    text-decoration: none;
+    color: $black-400;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
+  .info-details {
+    display: flex;
+    flex-direction: column;
+    row-gap: 8px;
+    margin-top: 16px;
+
+    li {
+      display: flex;
+      justify-content: space-between;
+      column-gap: 100px;
+
+      .title {
+        color: $gray-300;
+      }
+
+      .value {
+        color: $black-400;
       }
     }
   }

@@ -5,7 +5,7 @@ import Map from "../../components/Map.tsx";
 import SectionHeader from "../../components/SectionHeader.tsx";
 import Breadcrumbs, {BreadcrumbsItem} from "../../components/Breadcrumbs.tsx";
 import "../../scss/pages/contacts.scss";
-import Info from "./sections/Info.tsx";
+import ContactsInfo from "../../components/ContactsInfo.tsx";
 import ContactForm from "./sections/ContactForm.tsx";
 import Questions from "./sections/Questions.tsx";
 
@@ -19,7 +19,7 @@ const ContactsPage = () => {
                     <BreadcrumbsItem isActive={true}>Контакти</BreadcrumbsItem>
                 </Breadcrumbs>
             </SectionHeader>
-            <Info/>
+            <ContactsInfo/>
             <ContactForm/>
             <Questions/>
             <Map/>

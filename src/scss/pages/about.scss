@@ -12,6 +12,7 @@
 
   h1 {
     color: $black-400;
+    font-size: 84px;
 
     span {
       color: $orange-100;
@@ -148,23 +149,23 @@
       padding-left: calc((100% - $container-width) / 2);
     }
 
-    .brand-card:nth-child(1n) {
+    .brand-cards__swiper .swiper-slide:nth-child(1n) .brand-card {
       background: $black-100;
     }
 
-    .brand-card:nth-child(2n) {
+    .brand-cards__swiper .swiper-slide:nth-child(2n) .brand-card {
       background: $black-400;
     }
 
-    .brand-card:nth-child(3n) {
+    .brand-cards__swiper .swiper-slide:nth-child(3n) .brand-card {
       background: $orange-100;
     }
 
     .brand-card {
       padding: 40px;
       border-radius: 10px;
-      max-width: 730px;
       width: 100%;
+      height: 100%;
     }
 
     .brand-card__title {
@@ -182,5 +183,114 @@
       flex-wrap: wrap;
       gap: 16px;
     }
+  }
+
+  .brand-cards__swiper .swiper-slide {
+    max-width: 730px;
+  }
+
+  .call {
+    padding: 45px 0;
+    margin-top: 130px;
+    background-color: $orange-100;
+    color: $white-100;
+    background-image: image-set(
+                    url("../../assets/images/about/call/bg@1x.avif") 1x,
+                    url("../../assets/images/about/call/bg@2x.avif") 2x,
+                    url("../../assets/images/about/call/bg@1x.webp") 1x,
+                    url("../../assets/images/about/call/bg@2x.webp") 2x
+    );
+    background-repeat: no-repeat;
+    background-position: center right;
+    background-size: contain;
+
+    .call-form {
+      max-width: 580px;
+    }
+
+    .call-form__tel {
+      font-family: 'BebasNeue', sans-serif;
+      color: $white-100;
+      text-decoration: none;
+      font-size: 64px;
+      display: inline-block;
+      margin-top: 16px;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+
+    .call-form__desc {
+      margin-top: 16px;
+    }
+  }
+
+  .team {
+    margin-top: 130px;
+
+    .team__wrap {
+      margin-top: 60px;
+      display: flex;
+      justify-content: space-between;
+      column-gap: 40px;
+    }
+
+    .team__subtitle {
+      margin-top: 40px;
+    }
+
+    .team__list {
+      display: flex;
+      flex-direction: column;
+      row-gap: 16px;
+      margin-top: 24px;
+
+      li {
+        display: flex;
+        align-items: center;
+        column-gap: 10px;
+      }
+    }
+  }
+
+  .gallery {
+    margin-top: 120px;
+
+    .gallery-slider {
+      margin-top: 60px;
+    }
+
+    .swiper-slide {
+      width: 400px;
+      height: 228px;
+      overflow: hidden;
+
+      img {
+        display: inline-block;
+        width: 100%;
+        object-fit: contain;
+        border-radius: 10px;
+      }
+    }
+  }
+
+  .contacts {
+    margin-top: 120px;
+
+    .map-bg {
+      display: inline-block;
+      margin-top: 60px;
+    }
+
+    .contacts-info {
+      border-bottom: 1px solid $gray-100;
+      padding-bottom: 60px;
+    }
+  }
+
+  .section_marquee {
+    margin-top: 60px;
+    padding-bottom: 0;
   }
 }

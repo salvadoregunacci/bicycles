@@ -80,7 +80,7 @@ const BurgerMenu = () => {
                         <li><Link to="/workshop" className="sub-h2">Веломайстерня</Link></li>
                         <li><Link to="#" className="sub-h2">Зберігання</Link></li>
                         <li><Link to="#" className="sub-h2">Гарантії</Link></li>
-                        <li><Link to="#" className="sub-h2">Угода користувача</Link></li>
+                        <li><Link to="/agreement" className="sub-h2">Угода користувача</Link></li>
                         <li><Link to="#" className="sub-h2">Доставка та оплата</Link></li>
                         <li><Link to="#" className="sub-h2">Блог</Link></li>
                         <li><Link to="/contacts" className="sub-h2">Контакти</Link></li>

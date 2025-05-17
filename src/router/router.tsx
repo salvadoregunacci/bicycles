@@ -7,6 +7,7 @@ import OrderPage from "../pages/order/OrderPage.tsx";
 import ContactsPage from "../pages/contacts/ContactsPage.tsx";
 import WorkshopPage from "../pages/workshop/WorkshopPage.tsx";
 import AboutPage from "../pages/about/AboutPage.tsx";
+import AgreementPage from "../pages/agreement/AgreementPage.tsx";
 
 export const router = createBrowserRouter([
     {
@@ -40,5 +41,9 @@ export const router = createBrowserRouter([
     {
         path: "/about",
         element: <AboutPage/>,
+    },
+    {
+        path: "/agreement",
+        element: <AgreementPage/>,
     },
 ]);

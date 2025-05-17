@@ -1,0 +1,103 @@
+@import "../variables";
+
+.agreement-page {
+  .breadcrumbs {
+    color: $gray-400;
+
+    .breadcrumbs-item:not(._current) {
+      color: $gray-400;
+    }
+  }
+
+  .agreement-page__container {
+    padding-top: 48px;
+  }
+
+  .agreement-content-section h2 {
+    margin-top: 64px;
+  }
+
+  .agreement__descs {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    row-gap: 10px;
+  }
+
+  .agreement-content ul li {
+    list-style: disc;
+  }
+
+  ol {
+    list-style: none;
+
+    & > li {
+      counter-increment: section;
+      line-height: 1.6;
+
+      &::before {
+        content: counter(section) ". ";
+        color: $gray-400;
+        font-size: 20px;
+        font-weight: 500;
+      }
+
+      ol {
+        margin-top: 16px;
+
+        & > li {
+          counter-increment: subsection;
+
+          &:before {
+            content: counter(section) "." counter(subsection) ". ";
+            font-size: 16px;
+            font-weight: 400;
+          }
+        }
+      }
+    }
+  }
+
+  ul {
+    padding-left: 18px;
+  }
+
+  .agreement-content {
+    background: $white-200;
+    padding: 40px;
+    margin-top: 40px;
+
+    ol {
+      display: flex;
+      flex-direction: column;
+      row-gap: 24px;
+
+      .sub-h {
+        text-transform: uppercase;
+      }
+
+
+      ul {
+        margin-top: 16px;
+        display: flex;
+        flex-direction: column;
+        row-gap: 16px;
+        padding-left: 50px;
+      }
+    }
+  }
+
+  .agreement-content .contacts-block ul {
+    padding: 0;
+
+    li {
+      list-style: none;
+    }
+  }
+
+  .section_marquee {
+    margin-top: 80px;
+    padding-top: 60px;
+    padding-bottom: 0;
+  }
+}

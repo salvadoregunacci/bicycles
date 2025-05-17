@@ -1,4 +1,6 @@
 import Container from "../../../components/Container.tsx";
+import {Swiper, SwiperSlide} from "swiper/react";
+import 'swiper/css';
 
 interface IBrandCard {
     title: string,
@@ -46,22 +48,31 @@ const Brands = () => {
     ]
 
     return (
-        <div className="brands">
+        <section className="brands">
             <Container>
                 <div className="brands-title h2">Ми &mdash; офіційні дилери найкращих брендів:</div>
             </Container>
             <div className="brand-cards">
-                {
-                    cards.map((card, index) => (
-                        <BrandCard
-                            key={index}
-                            title={card.title}
-                            items={card.items}
-                        />
-                    ))
-                }
+                <Swiper
+                    className="brand-cards__swiper"
+                    slidesPerView={2.5}
+                    spaceBetween={30}
+                >
+                    {
+                        cards.map((card, index) => (
+                            <SwiperSlide
+                                key={index}
+                            >
+                                <BrandCard
+                                    title={card.title}
+                                    items={card.items}
+                                />
+                            </SwiperSlide>
+                        ))
+                    }
+                </Swiper>
             </div>
-        </div>
+        </section>
     );
 };
 
