@@ -269,7 +269,7 @@ const DeliveryDetails = () => {
                     </div>
                     <div className="order-methods-form">
                         <div className="order-methods-form__block">
-                            <div className="title sub-h2">Спосіб доставки</div>
+                            <h4 className="title sub-h2">Спосіб доставки</h4>
                             <div className="fields">
                                 <Radio
                                     checked={deliveryMethod === "novaposhta"}
@@ -294,7 +294,7 @@ const DeliveryDetails = () => {
                             </div>
                         </div>
                         <div className="order-methods-form__block">
-                            <div className="title sub-h2">Спосіб оплати</div>
+                            <h4 className="title sub-h2">Спосіб оплати</h4>
                             <div className="fields">
                                 <Radio
                                     checked={payMethod === "receipt"}

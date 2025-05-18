@@ -53,10 +53,10 @@ const ContactsList = ({className = "", ...props}: IProps) => {
                             </clipPath>
                         </defs>
                     </svg>
-                    <span className="contacts__item-text t3">
-                            <span>{city}</span>
-                            <span>{street1}, {street2}</span>
-                        </span>
+                    <address className="contacts__item-text t3">
+                        <span>{city}</span>
+                        <span>{street1}, {street2}</span>
+                    </address>
                 </div>
                 <div className="contacts__item email">
                     <svg className="contacts__item-icon" width="32" height="32" viewBox="0 0 32 32" fill="none"
@@ -91,11 +91,10 @@ const ContactsList = ({className = "", ...props}: IProps) => {
                               strokeWidth="1.5" strokeLinecap="round"
                               strokeLinejoin="round"/>
                     </svg>
-
                     <span className="contacts__item-text t3">
                             <span>Без вихідних</span>
-                            <span>{workTime.start}-{workTime.end}</span>
-                        </span>
+                            <time>{workTime.start}-{workTime.end}</time>
+                    </span>
                 </div>
             </div>
         </div>

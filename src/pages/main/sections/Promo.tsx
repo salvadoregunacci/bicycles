@@ -7,6 +7,7 @@ import 'swiper/css/pagination';
 import Button from "../../../components/ui/Button.tsx";
 import PromoCards from "../../../components/PromoCards.tsx";
 import Container from "../../../components/Container.tsx";
+import {Link} from "react-router-dom";
 
 const Promo = () => {
     return (
@@ -58,11 +59,12 @@ const Promo = () => {
                     <div className="promo__content">
                         <h1>Електро велосипеди</h1>
                         <p className="promo__offer sub-h3">
-                            Cento10 Hybrid — це гоночний велосипед з допомагаючим педалюванню електроприводом, який
+                            <dfn>Cento10 Hybrid</dfn> — це гоночний велосипед з допомагаючим педалюванню електроприводом, який
                             встановлює новий, дуже високий стандарт для даної категорії
                         </p>
                         <Button
-                            link="#"
+                            as={Link}
+                            to="/catalog"
                             className="promo__action-btn"
                         >
                             Детальніше

@@ -1,0 +1,129 @@
+@import "../variables";
+
+.safeguards-page {
+  .section-header_safeguards {
+    background-image: image-set(
+                    url("../../assets/images/sections_headers/safeguards@1x.avif") 1x,
+                    url("../../assets/images/sections_headers/safeguards@2x.avif") 2x,
+                    url("../../assets/images/sections_headers/safeguards@1x.webp") 1x,
+                    url("../../assets/images/sections_headers/safeguards@2x.webp") 2x
+    );
+  }
+
+  .safeguards-desc {
+    margin-top: 48px;
+    display: flex;
+    justify-content: space-between;
+
+    p {
+      max-width: 620px;
+      line-height: 1.6;
+    }
+  }
+
+  .safeguards-tables {
+    .safeguards-tables__title {
+      margin-top: 60px;
+    }
+
+    .safeguards-tables__wrap {
+      display: flex;
+      column-gap: 40px;
+      justify-content: space-between;
+      margin-top: 48px;
+    }
+
+    table {
+      border: 1px solid $gray-100;
+      border-radius: 10px;
+      border-collapse: separate;
+      overflow: hidden;
+      width: 100%;
+
+      td {
+        padding: 24px;
+      }
+
+      td:nth-child(2) {
+        text-align: right;
+        color: $gray-300
+      }
+
+      tr:nth-child(even) {
+        background: $white-200;
+      }
+    }
+  }
+
+  .sefeguards-requirements {
+    margin-top: 80px;
+
+    ul {
+      display: flex;
+      flex-direction: column;
+      row-gap: 16px;
+      margin-top: 24px;
+    }
+
+    li {
+      svg {
+        display: inline-block;
+        margin-right: 10px;
+      }
+    }
+
+    .sefeguards-paragraph {
+      margin-top: 32px;
+    }
+  }
+
+  .sefeguards-paragraph {
+    background: $white-200;
+    border-radius: 10px;
+    padding: 24px;
+    line-height: 1.6;
+  }
+
+  .sefeguards-exceptions {
+    margin-top: 80px;
+
+    h4 strong {
+      color: $red-100;
+    }
+
+    .sefeguards-paragraph {
+      margin-top: 16px;
+    }
+  }
+
+  .sefeguards-exceptions__wrap {
+    display: flex;
+    column-gap: 40px;
+    margin-top: 24px;
+  }
+
+  .sefeguards-exceptions__bg {
+    border-radius: 10px;
+  }
+
+  .sefeguards-exceptions__content ul {
+    padding: 32px 50px;
+    background: $orange-100;
+    border-radius: 10px;
+    color: $white-100;
+    display: flex;
+    flex-direction: column;
+    row-gap: 16px;
+
+    li {
+      list-style: disc;
+    }
+  }
+
+  .section_marquee {
+    margin-top: 120px;
+    border-top: 1px solid $gray-100;
+    padding-bottom: 0;
+    padding-top: 120px;
+  }
+}

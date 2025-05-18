@@ -63,32 +63,30 @@ const Benefits = () => {
                         </picture>
                     </SwiperSlide>
                 </Swiper>
-
                 <div className="benefits-items">
                     <div className="benefits-item">
-                        <div className="benefits-item__title sub-h">безкоштовна доставка</div>
+                        <h3 className="benefits-item__title sub-h">безкоштовна доставка</h3>
                         <p className="benefits-item__desc t3 ">Ми користуємось усіма популярними видами доставки</p>
                         <Link to="#" className="benefits-item__link t1">Детальніше</Link>
                     </div>
                     <div className="benefits-item">
-                        <div className="benefits-item__title sub-h">обмін і повернення</div>
+                        <h3 className="benefits-item__title sub-h">обмін і повернення</h3>
                         <p className="benefits-item__desc t3 ">Усі товари забезпечені фірмовою гарантією
                             фірм-виробників</p>
                         <Link to="#" className="benefits-item__link t1">Детальніше</Link>
                     </div>
                     <div className="benefits-item">
-                        <div className="benefits-item__title sub-h">додат. обслуговування</div>
+                        <h3 className="benefits-item__title sub-h">додат. обслуговування</h3>
                         <p className="benefits-item__desc t3 ">Ми виконуємо ремонт велосипеда будь-якої складності</p>
                         <Link to="#" className="benefits-item__link t1">Детальніше</Link>
                     </div>
                     <div className="benefits-item">
-                        <div className="benefits-item__title sub-h">онлайн оплата</div>
+                        <h3 className="benefits-item__title sub-h">онлайн оплата</h3>
                         <p className="benefits-item__desc t3 ">Для зручності ви можете сплатити товар банківською
                             карткою через сайт</p>
                         <Link to="#" className="benefits-item__link t1">Детальніше</Link>
                     </div>
                 </div>
-
                 <picture>
                     <source
                         srcSet="/images/main/benefits/side_block@1x.avif, /images/main/benefits/side_block@2x.avif 2x"

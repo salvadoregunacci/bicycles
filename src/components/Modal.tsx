@@ -19,7 +19,7 @@ const Modal = ({
                    className = "",
                    closeBtnInBody = false,
                }: Props) => {
-    const handleClick: React.MouseEventHandler<HTMLDivElement> = (e) => {
+    const handleClick: React.MouseEventHandler<HTMLDialogElement> = (e) => {
         if (isCloseOverClick && e.target && e.target instanceof HTMLElement && !e.target.closest(".modal__content")) {
             onClose(e);
             document.body.style.overflowY = "";
@@ -53,7 +53,7 @@ const Modal = ({
     }, [isActive]);
 
     return (
-        <div
+        <dialog
             className={`modal ${className} ${closeBtnInBody ? "_close-btn-inner" : ""} ${isActive ? "active" : ""}`}
             onClick={handleClick}
         >
@@ -76,7 +76,7 @@ const Modal = ({
                     />
                     : null
             }
-        </div>
+        </dialog>
     );
 };
 

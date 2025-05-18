@@ -135,8 +135,8 @@ const Total = ({onClickConfirm}: IProps) => {
                 </div>
                 <div className="col summary">
                     <div className="summary-row">
-                        <div className="summary-title sub-h">Всього {getWordForm(cartItems.length)}:</div>
-                        <div className="summary-price h2">{Number(totalPrice).toLocaleString("ru-RU")} {currency}</div>
+                        <div className="summary-title sub-h">Всього <output>{getWordForm(cartItems.length)}</output>:</div>
+                        <div className="summary-price h2"><output>{Number(totalPrice).toLocaleString("ru-RU")}</output> {currency}</div>
                     </div>
                     <Button
                         className="order-confirm-btn"

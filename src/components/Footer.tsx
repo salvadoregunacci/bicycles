@@ -118,10 +118,10 @@ const Footer = () => {
                                                 </defs>
                                             </svg>
                                         </div>
-                                        <span className="footer-contact">
-                                        <span>{city}</span>
-                                        <span>{street1}, {street2}</span>
-                                    </span>
+                                        <address className="footer-contact">
+                                            <span>{city}</span>
+                                            <span>{street1}, {street2}</span>
+                                        </address>
                                     </li>
                                     <li>
                                         <div className="icon">
@@ -146,8 +146,8 @@ const Footer = () => {
                         </div>
                     </div>
                     <div className="footer-desc t4">
-                        <div className="footer-copyright">© 2023 world bike</div>
-                        <a href="#" target="_blank">Угода користувача</a>
+                        <p className="footer-copyright">© 2023 world bike</p>
+                        <Link to="/agreement">Угода користувача</Link>
                     </div>
                 </Container>
             </footer>

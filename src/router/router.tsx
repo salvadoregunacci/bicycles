@@ -8,6 +8,7 @@ import ContactsPage from "../pages/contacts/ContactsPage.tsx";
 import WorkshopPage from "../pages/workshop/WorkshopPage.tsx";
 import AboutPage from "../pages/about/AboutPage.tsx";
 import AgreementPage from "../pages/agreement/AgreementPage.tsx";
+import SafeguardsPage from "../pages/safeguards/SafeguardsPage.tsx";
 
 export const router = createBrowserRouter([
     {
@@ -45,5 +46,9 @@ export const router = createBrowserRouter([
     {
         path: "/agreement",
         element: <AgreementPage/>,
+    },
+    {
+        path: "/safeguards",
+        element: <SafeguardsPage/>,
     },
 ]);

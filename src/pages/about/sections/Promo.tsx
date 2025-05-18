@@ -9,11 +9,11 @@ interface IPropsPromoCard {
 
 const PromoCard = ({title, children, link}: IPropsPromoCard) => {
     return (
-        <div className="promo-card">
-            <div className="promo-card__title h2">{title}</div>
-            <div className="promo-card__desc t3">{children}</div>
+        <article className="promo-card">
+            <h2 className="promo-card__title h2">{title}</h2>
+            <p className="promo-card__desc t3">{children}</p>
             <Link to={link} className="promo-card__link t1">Детальніше</Link>
-        </div>
+        </article>
     );
 }
 
@@ -21,7 +21,7 @@ const Promo = () => {
     return (
         <section className="promo">
             <Container>
-                <h1><span>Велосипед</span> - це не просто засіб пересування!</h1>
+                <h1><em>Велосипед</em> - це не просто засіб пересування!</h1>
                 <div className="promo__cards">
                     <PromoCard title="Зберігання" link="#">
                         Любиш кататися - люби і велосипед у квартирі на зиму паркувати або здавай до нас на зберігання

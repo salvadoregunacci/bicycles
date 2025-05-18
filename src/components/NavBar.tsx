@@ -37,7 +37,7 @@ const NavBarInnerList = ({id, items}: NavBarInnerListType) => {
 
 const NavBarItem = ({children, link, innerList, className = ""}: NavBarItemType) => {
     return (
-        <div className={`${className} nav-bar__item`}>
+        <li className={`${className} nav-bar__item`}>
             <Link to={link} className={`nav-bar__item-handler nav-bar__item-link t4 ${innerList ? "nav-bar__item-trigger" : ""}`}>
                 {children}
             </Link>
@@ -49,7 +49,7 @@ const NavBarItem = ({children, link, innerList, className = ""}: NavBarItemType)
                     />
                     : null
             }
-        </div>
+        </li>
 
     );
 }

@@ -8,24 +8,26 @@ const Summary = () => {
     const currency = useAppSelector(state => state.shop.currency);
 
     return (
-        <div className="cart-summary">
+        <aside className="cart-summary">
             <div className="cart-summary__rows">
                 <div className="cart-summary__row">
-                    <div className="cart-summary__row-title t3">Номер замовлення:</div>
-                    <div className="cart-summary__row-value t3">729567678</div>
+                    <h4 className="cart-summary__row-title t3">Номер замовлення:</h4>
+                    <data className="cart-summary__row-value t3" value="729567678">729567678</data>
                 </div>
                 <div className="cart-summary__row">
-                    <div className="cart-summary__row-title t3">Сума замовлення (без знижки):</div>
+                    <h4 className="cart-summary__row-title t3">Сума замовлення <em>(без знижки)</em>:</h4>
                     <div className="cart-summary__row-value t3">
-                        {Number(totalPrice).toLocaleString("ru-RU")} {currency}
+                        <output>{Number(totalPrice).toLocaleString("ru-RU")}</output>
+                        {currency}
                     </div>
                 </div>
                 {
                     totalSale > 0 ?
                         <div className="cart-summary__row">
-                            <div className="cart-summary__row-title t3">Знижка:</div>
+                            <h4 className="cart-summary__row-title t3">Знижка:</h4>
                             <div className="cart-summary__row-value t3">
-                                {Number(totalSale).toLocaleString("ru-RU")} {currency}
+                                <output>{Number(totalSale).toLocaleString("ru-RU")}</output>
+                                {currency}
                             </div>
                         </div>
                         :
@@ -33,15 +35,16 @@ const Summary = () => {
                 }
             </div>
             <div className="cart-summary__total">
-                <div className="cart-summary__total-title">Всього:</div>
+                <h4 className="cart-summary__total-title">Всього:</h4>
                 <div className="cart-summary__total-value">
-                    {(totalPrice <= 0 ? 0 : totalPrice).toLocaleString("ru-RU")} {currency}
+                    <output>{(totalPrice <= 0 ? 0 : totalPrice).toLocaleString("ru-RU")}</output>
+                    {currency}
                 </div>
             </div>
             <Button as={Link} to="/order" className="place-order">
                 Оформити замовлення
             </Button>
-        </div>
+        </aside>
     );
 };
 

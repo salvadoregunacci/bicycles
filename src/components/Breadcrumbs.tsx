@@ -39,18 +39,20 @@ const Breadcrumbs = ({
             className={`${className} breadcrumbs`}
             {...props}
         >
-            {
-                React.Children.toArray(children).map((child, index, arr) => (
-                    <React.Fragment key={index}>
-                        {child}
-                        {
-                            index !== (arr.length - 1) ?
-                                <span className="delimetr">/</span>
-                                : null
-                        }
-                    </React.Fragment>
-                ))
-            }
+            <ol>
+                {
+                    React.Children.toArray(children).map((child, index, arr) => (
+                        <li key={index}>
+                            {child}
+                            {
+                                index !== (arr.length - 1) ?
+                                    <span className="delimetr">/</span>
+                                    : null
+                            }
+                        </li>
+                    ))
+                }
+            </ol>
         </nav>
     );
 };

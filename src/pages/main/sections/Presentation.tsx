@@ -13,14 +13,12 @@ const PresentationItem = ({title, desc, icon}: PresentationItem) => {
     return (
         <div className="presentation-item">
             <div className="presentation-item__wrap">
-                <div className="presentation-item__title sub-h">{title}</div>
-                {
-                    icon
-                }
+                <h4 className="presentation-item__title sub-h">{title}</h4>
+                {icon}
             </div>
-            <div className="presentation-item__desc t2">
+            <p className="presentation-item__desc t2">
                 {desc}
-            </div>
+            </p>
         </div>
     );
 }
@@ -139,7 +137,7 @@ const Presentation = () => {
                         }
                     </div>
 
-                    <div className="presentation-article">
+                    <article className="presentation-article">
                         <div className="presentation-article__wrap">
                             <picture>
                                 <source
@@ -161,7 +159,6 @@ const Presentation = () => {
                                 комфортною.
                             </p>
                         </div>
-
                         <Button
                             as={Link}
                             to="/catalog"
@@ -169,7 +166,7 @@ const Presentation = () => {
                         >
                             Каталог
                         </Button>
-                    </div>
+                    </article>
                 </div>
             </Container>
         </section>

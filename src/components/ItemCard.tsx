@@ -26,7 +26,6 @@ const ItemCard = ({item, className = ""}: Props) => {
                 <div className="item-card__preview">
                     <img src={item.preview} alt="preview"/>
                 </div>
-
                 <div className="item-card__wrap">
                     <div className="item-card__title sub-h3">{item.title}</div>
                     <div className="item-card__price t1">
@@ -53,7 +52,6 @@ const ItemCard = ({item, className = ""}: Props) => {
                         </span>
                     </Button>
                 </div>
-
                 <div className="item-card__float item-card__flag">
                     <img src={item.country.flag} alt={item.country.name}/>
                 </div>

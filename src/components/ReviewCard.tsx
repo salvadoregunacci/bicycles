@@ -14,7 +14,7 @@ const ReviewCard = ({
     const formattedDate = new Date(date * 1000).toLocaleDateString("ru-RU");
 
     return (
-        <div className="review-card">
+        <article className="review-card">
             <div className="review-card__preview">
                 <img src={preview} alt="preview"/>
             </div>
@@ -32,7 +32,7 @@ const ReviewCard = ({
                 <div className="review-card__body sub-h3">{body}</div>
                 <Link to="#" className="review-card__more-btn t2">Детальніше</Link>
             </div>
-        </div>
+        </article>
     );
 };
 

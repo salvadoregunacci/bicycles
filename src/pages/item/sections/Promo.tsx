@@ -97,7 +97,7 @@ const Promo = () => {
                             <div className="promo-row">
                                 <div className="col">
                                     <div className="brand t5">{productInfo.brand}</div>
-                                    <div className="article t5">Артикул: {productInfo.articleId}</div>
+                                    <div className="article t5">Артикул: <data value={productInfo.articleId}>{productInfo.articleId}</data></div>
                                     <div className={`in-stock t2 ${productInfo.available ? "" : "_not-available"}`}>
                                         {productInfo.available ? "В наявності" : "Немає в наявності"}
                                     </div>

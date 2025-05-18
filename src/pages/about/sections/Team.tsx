@@ -12,9 +12,9 @@ const Team = () => {
                             Європи та Росії, учасники вітчизняної збірної. Не сумнівайтеся, якщо хтось і здатний надати
                             вам по-справжньому професійну консультацію, то це вони.
                         </p>
-                        <div className="team__subtitle sub-h">
+                        <p className="team__subtitle sub-h">
                             Консультанти World-Bike допоможуть вам у будь-якому питанні:
-                        </div>
+                        </p>
                         <ul className="team__list">
                             <li>
                                 <svg width="14" height="15" viewBox="0 0 14 15" fill="none"
