@@ -1,0 +1,118 @@
+@import "../variables";
+
+.blog-item-page {
+  .breadcrumbs {
+    color: $gray-400;
+  }
+
+  .breadcrumbs-item:not(._current) {
+    color: $gray-400;
+  }
+
+  .blog-item-page__container {
+    padding-top: 48px;
+  }
+
+  .content {
+    padding-top: 48px;
+    line-height: 1.6;
+
+    h4 {
+      font-size: 24px;
+      font-weight: 500;
+      max-width: 730px;
+    }
+
+    img {
+      border-radius: 10px;
+    }
+
+    .row {
+      display: flex;
+      column-gap: 40px;
+      margin-top: 40px;
+    }
+
+    hr {
+      border-top: 1px solid #dddddd;
+      margin: 48px 0;
+    }
+
+    .socials {
+      display: flex;
+      column-gap: 32px;
+
+      &>span {
+        font-size: 16px;
+        color: $gray-300;
+      }
+
+      .socials__icons {
+        display: flex;
+        column-gap: 8px;
+      }
+
+      a {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 32px;
+        height: 32px;
+        border-radius: 100%;
+        background: $gray-100;
+        transition: .3s;
+
+        &:hover {
+          background: $gray-400;
+        }
+
+        svg {
+          width: 18px;
+        }
+      }
+    }
+
+    .viber svg {
+      transform: translateY(2px);
+    }
+
+    .watsapp svg {
+      transform: translateX(1px);
+    }
+
+    .telegram svg {
+      transform: translateX(-2px);
+    }
+  }
+
+  .video {
+    width: 100%;
+    max-height: 400px;
+    position: relative;
+    cursor: pointer;
+    margin-top: 40px;
+
+    .video__play-btn {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+
+    .video__bg {
+      border-radius: 10px;
+    }
+  }
+
+  .video + p {
+    margin-top: 32px;
+  }
+
+  section:not(:first-child) {
+    margin-top: 80px;
+  }
+
+  section p:not(:first-child) {
+    margin-top: 24px;
+  }
+}

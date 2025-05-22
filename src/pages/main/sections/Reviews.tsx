@@ -2,7 +2,7 @@ import {Swiper, SwiperSlide} from "swiper/react";
 import {Keyboard} from "swiper/modules";
 import {useAppDispatch, useAppSelector} from "../../../hooks.ts";
 import {useEffect} from "react";
-import ReviewCard from "../../../components/ReviewCard.tsx";
+import PreviewCard from "../../../components/PreviewCard.tsx";
 import "swiper/css";
 import {Link} from "react-router-dom";
 import Container from "../../../components/Container.tsx";
@@ -37,11 +37,12 @@ const Reviews = () => {
                                 {
                                     reviews.map((review, index) => (
                                         <SwiperSlide key={index}>
-                                            <ReviewCard
+                                            <PreviewCard
                                                 preview={review.preview}
                                                 date={review.date}
                                                 hashtags={review.hashtags}
                                                 body={review.body}
+                                                link="#"
                                             />
                                         </SwiperSlide>
                                     ))

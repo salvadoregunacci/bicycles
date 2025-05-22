@@ -2,7 +2,7 @@ import {createSlice, PayloadAction} from "@reduxjs/toolkit";
 import {ICartItem, ICatalogFilter, IShopItem, IShopState} from "../../../types.ts";
 import {CatalogSortType, CatalogViewType} from "../../../enums.ts";
 import {
-    getBestItems,
+    getBestItems, getBlogItems,
     getCartSimilarItems,
     getCatalogPage,
     getCategories,
@@ -217,6 +217,7 @@ const initialState: IShopState = {
     cartTotalPrice: getTotalPrice(cartItems) - getTotalSale(cartItems), // TODO: в продакш установить: 0
     cartTotalSale: getTotalSale(cartItems), // TODO: в продакш установить: 0,
     novaPoshtaApiKey: "a43d5f8dce21ab55d386bd285212ec2c", // TODO: найти номер для API
+    blogItems: null,
 }
 
 const shopSlice = createSlice({
@@ -296,6 +297,9 @@ const shopSlice = createSlice({
         });
         builder.addCase(getCartSimilarItems.fulfilled, (state, action) => {
             state.cartSimilarItems = action.payload;
+        });
+        builder.addCase(getBlogItems.fulfilled, (state, action) => {
+            state.blogItems = action.payload;
         });
     }
 });

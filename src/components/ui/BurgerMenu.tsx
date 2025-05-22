@@ -92,10 +92,10 @@ const BurgerMenu = () => {
                             <Link to="/agreement" className="sub-h2">Угода користувача</Link>
                         </li>
                         <li>
-                            <Link to="#" className="sub-h2">Доставка та оплата</Link>
+                            <Link to="/delivery" className="sub-h2">Доставка та оплата</Link>
                         </li>
                         <li>
-                            <Link to="#" className="sub-h2">Блог</Link>
+                            <Link to="/blog" className="sub-h2">Блог</Link>
                         </li>
                         <li>
                             <Link to="/contacts" className="sub-h2">Контакти</Link>

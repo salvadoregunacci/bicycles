@@ -5,7 +5,7 @@ const HeaderControls = () => {
     return (
         <div className="header-controls">
             <Search/>
-            <LinkIcon to="#" title="Особистий кабінет">
+            <LinkIcon to="/account/personal_data" title="Особистий кабінет">
                 <svg width="18" height="20" viewBox="0 0 18 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M13 13H5C2.79086 13 1 14.7909 1 17V19H9H17V17C17 14.7909 15.2091 13 13 13Z" stroke="white"
                           strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
@@ -14,7 +14,7 @@ const HeaderControls = () => {
                         stroke="white" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
                 </svg>
             </LinkIcon>
-            <LinkIcon to="#" includeNew={true} title="Вподобане">
+            <LinkIcon to="/account/wishlist" includeNew={true} title="Вподобане">
                 <svg width="20" height="18" viewBox="0 0 20 18" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path
                         d="M2.3314 9.0474L10 17L17.6686 9.0474C18.5211 8.1633 19 6.96429 19 5.71405C19 3.11055 16.9648 1 14.4543 1C13.2487 1 12.0925 1.49666 11.24 2.38071L10 3.66667L8.76 2.38071C7.90749 1.49666 6.75128 1 5.54569 1C3.03517 1 1 3.11055 1 5.71405C1 6.96429 1.47892 8.1633 2.3314 9.0474Z"

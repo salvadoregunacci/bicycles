@@ -11,7 +11,7 @@ const StoringPage = () => {
     return (
         <Page title="Зберігання" className="storing-page">
             <Header/>
-            <SectionHeader title="Зберігання" className="storing-page__header">
+            <SectionHeader title="Зберігання велосипеда" className="storing-page__header">
                 <Breadcrumbs>
                     <BreadcrumbsItem link="#">Головна</BreadcrumbsItem>
                     <BreadcrumbsItem isActive={true}>Зберігання велосипеда</BreadcrumbsItem>

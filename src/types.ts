@@ -1,6 +1,6 @@
 import {CatalogSortType, CatalogViewType} from "./enums.ts";
 
-export interface IReview {
+export interface IPreviewCard {
     preview: string,
     date: number,
     hashtags: string[],
@@ -68,7 +68,7 @@ export interface IShopState {
     categories: ICategory[] | null,
     bestItems: IShopItem[] | null,
     outfitItems: IOutfitItem[] | null,
-    reviews: IReview[] | null,
+    reviews: IPreviewCard[] | null,
     catalogFilter: ICatalogFilter,
     catalogPage: ICatalogPage | null,
     catalogSortBy: CatalogSortType,
@@ -80,6 +80,7 @@ export interface IShopState {
     cartTotalPrice: number,
     cartTotalSale: number,
     novaPoshtaApiKey: string,
+    blogItems: IPreviewCard[] | null,
 }
 
 export interface ICartItem extends IShopItem {

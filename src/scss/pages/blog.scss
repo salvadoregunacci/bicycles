@@ -1,0 +1,32 @@
+@import "../variables";
+
+.blog-page {
+  .section-header_blog {
+    background-image: image-set(
+                    url("../../assets/images/sections_headers/blog@1x.avif") 1x,
+                    url("../../assets/images/sections_headers/blog@2x.avif") 2x,
+                    url("../../assets/images/sections_headers/blog@1x.webp") 1x,
+                    url("../../assets/images/sections_headers/blog@2x.webp") 2x
+    );
+  }
+
+  .blog-page__items {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 40px;
+  }
+
+  .blog-page__container {
+    padding-top: 48px;
+  }
+
+  .items-section__view-all-btn {
+    width: 100%;
+    text-align: center;
+  }
+
+  .all-link-wrap {
+    display: flex;
+    margin-top: 48px;
+  }
+}

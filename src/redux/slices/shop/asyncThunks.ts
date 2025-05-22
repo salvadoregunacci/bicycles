@@ -5,7 +5,7 @@ import {
     ICategory,
     IItemFullInfo,
     IOutfitItem,
-    IReview,
+    IPreviewCard,
     IShopItem
 } from "../../../types.ts";
 import {newItems} from "../../../data_mocup/newItems.ts";
@@ -16,6 +16,33 @@ import {catalogPage1} from "../../../data_mocup/catalogPage1.ts";
 import {itemFullInfo} from "../../../data_mocup/itemFullInfo.ts";
 import {cartSimilarItems} from "../../../data_mocup/cartSimilarItems.ts";
 import {RootState} from "../../store.ts";
+import {blogItems} from "../../../data_mocup/blogItems.ts";
+
+export const getBlogItems = createAsyncThunk<IPreviewCard[], undefined, {
+    rejectValue: string
+}>("shop/getBlogItems", async (_, {rejectWithValue}) => {
+    try {
+        // const res = await axios.get(`/item/${itemId}`);
+
+        const res = {
+            status: 200,
+            data: blogItems,
+        }
+
+        if (res.status === 200) {
+            return res.data as IPreviewCard[];
+        } else {
+            return rejectWithValue("Failed to fetch [blog items]")
+        }
+    } catch (err) {
+        if (err instanceof Error) {
+            return rejectWithValue(err.message);
+        } else {
+            return rejectWithValue("Unknown error");
+        }
+    }
+});
+
 
 export const getItemFullInfo = createAsyncThunk<IItemFullInfo, number, {
     rejectValue: string
@@ -143,7 +170,7 @@ export const getCategories = createAsyncThunk<ICategory[], undefined, {
     }
 });
 
-export const getReviews = createAsyncThunk<IReview[], undefined, {
+export const getReviews = createAsyncThunk<IPreviewCard[], undefined, {
     rejectValue: string
 }>("shop/getReviews", async (_, {rejectWithValue}) => {
     try {

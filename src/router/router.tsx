@@ -10,6 +10,9 @@ import AboutPage from "../pages/about/AboutPage.tsx";
 import AgreementPage from "../pages/agreement/AgreementPage.tsx";
 import SafeguardsPage from "../pages/safeguards/SafeguardsPage.tsx";
 import StoringPage from "../pages/storing/StoringPage.tsx";
+import DeliveryPage from "../pages/delivery/DeliveryPage.tsx";
+import BlogPage from "../pages/blog/BlogPage.tsx";
+import BlogItemPage from "../pages/blogItem/BlogItemPage.tsx";
 
 export const router = createBrowserRouter([
     {
@@ -56,4 +59,16 @@ export const router = createBrowserRouter([
       path: "/storing",
       element: <StoringPage/>,
     },
+    {
+        path: "/delivery",
+        element: <DeliveryPage/>,
+    },
+    {
+        path: "/blog",
+        element: <BlogPage/>,
+    },
+    {
+        path: "/blog-item",
+        element: <BlogItemPage/>,
+    }
 ]);
