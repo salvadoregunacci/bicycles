@@ -81,6 +81,14 @@ export interface IShopState {
     cartTotalSale: number,
     novaPoshtaApiKey: string,
     blogItems: IPreviewCard[] | null,
+    orders: IOrder[] | null,
+}
+
+export interface IOrder {
+    date: number,
+    orderId: number,
+    status: "new" | "completed",
+    items: IShopItem[],
 }
 
 export interface ICartItem extends IShopItem {

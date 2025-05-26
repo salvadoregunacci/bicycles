@@ -13,6 +13,10 @@ import StoringPage from "../pages/storing/StoringPage.tsx";
 import DeliveryPage from "../pages/delivery/DeliveryPage.tsx";
 import BlogPage from "../pages/blog/BlogPage.tsx";
 import BlogItemPage from "../pages/blogItem/BlogItemPage.tsx";
+import AccountPage from "../pages/account/AccountPage.tsx";
+import PersonalData from "../pages/account/sections/PersonalData.tsx";
+import Wishlist from "../pages/account/sections/Wishlist.tsx";
+import {Navigate} from 'react-router-dom';
 
 export const router = createBrowserRouter([
     {
@@ -56,8 +60,8 @@ export const router = createBrowserRouter([
         element: <SafeguardsPage/>,
     },
     {
-      path: "/storing",
-      element: <StoringPage/>,
+        path: "/storing",
+        element: <StoringPage/>,
     },
     {
         path: "/delivery",
@@ -70,5 +74,27 @@ export const router = createBrowserRouter([
     {
         path: "/blog-item",
         element: <BlogItemPage/>,
+    },
+    {
+        path: "/account",
+        element: <AccountPage/>,
+        children: [
+            {
+                index: true,
+                element: <Navigate to="personal_data" replace/>
+            },
+            {
+                path: "personal_data",
+                element: <PersonalData/>
+            },
+            {
+                path: "wishlist",
+                element: <Wishlist/>
+            },
+            {
+                path: "order_history",
+                element: <OrderPage/>
+            },
+        ]
     }
 ]);

@@ -3,7 +3,7 @@ import {
     ICatalogPage,
     ICatalogPagePayload,
     ICategory,
-    IItemFullInfo,
+    IItemFullInfo, IOrder,
     IOutfitItem,
     IPreviewCard,
     IShopItem
@@ -17,6 +17,33 @@ import {itemFullInfo} from "../../../data_mocup/itemFullInfo.ts";
 import {cartSimilarItems} from "../../../data_mocup/cartSimilarItems.ts";
 import {RootState} from "../../store.ts";
 import {blogItems} from "../../../data_mocup/blogItems.ts";
+import {ordersItems} from "../../../data_mocup/orderItems.ts";
+
+export const getOrders = createAsyncThunk<IOrder[], undefined, {
+    rejectValue: string
+}>("shop/getOrders", async (_, {rejectWithValue}) => {
+    try {
+        // const res = await axios.get(`/orders`);
+
+        const res = {
+            status: 200,
+            data: ordersItems,
+        }
+
+        if (res.status === 200) {
+            return res.data as IOrder[];
+        } else {
+            return rejectWithValue("Failed to fetch [orders]")
+        }
+    } catch (err) {
+        if (err instanceof Error) {
+            return rejectWithValue(err.message);
+        } else {
+            return rejectWithValue("Unknown error");
+        }
+    }
+});
+
 
 export const getBlogItems = createAsyncThunk<IPreviewCard[], undefined, {
     rejectValue: string

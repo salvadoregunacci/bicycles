@@ -1,0 +1,102 @@
+@import "../variables";
+
+.account-page {
+  .account-page__container {
+    display: flex;
+    column-gap: 60px;
+    padding-top: 80px;
+  }
+
+  .account-sidebar {
+    width: 290px;
+    min-height: 290px;
+
+    h4 {
+      font-size: 24px;
+      font-weight: 500;
+      padding: 0 16px;
+    }
+
+    nav {
+      border-top: 1px solid $gray-100;
+      margin-top: 16px;
+      padding-top: 16px;
+
+      ul {
+        display: flex;
+        flex-direction: column;
+        row-gap: 4px;
+      }
+
+      li {
+        height: 58px;
+
+        a {
+          text-decoration: none;
+          color: $black-400;
+          height: 100%;
+          width: 100%;
+          padding: 0 16px;
+          display: flex;
+          align-items: center;
+          transition: .3s;
+          border-radius: 10px;
+        }
+
+        &:hover {
+          a {
+            background: #f4f4f4;
+          }
+        }
+
+        a._active {
+          background: $orange-100;
+          color: $white-100;
+        }
+      }
+    }
+  }
+
+  .personal-data .form {
+    max-width: 620px;
+  }
+
+  .form {
+    display: flex;
+    flex-direction: column;
+    row-gap: 16px;
+    width: 100%;
+
+    .field {
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+
+      .input-wrap {
+        width: 100%;
+      }
+
+      label {
+        color: $gray-400;
+        margin-bottom: 5px;
+      }
+    }
+
+    .row {
+      display: flex;
+      column-gap: 16px;
+      width: 100%;
+    }
+
+    .input-wrap .input {
+      width: 100%;
+      background: $white-200;
+    }
+
+    .submit-btn {
+      min-width: 180px;
+      align-self: flex-start;
+      margin-top: 30px;
+    }
+  }
+}
