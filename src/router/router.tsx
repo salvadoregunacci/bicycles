@@ -17,6 +17,8 @@ import AccountPage from "../pages/account/AccountPage.tsx";
 import PersonalData from "../pages/account/sections/PersonalData.tsx";
 import Wishlist from "../pages/account/sections/Wishlist.tsx";
 import {Navigate} from 'react-router-dom';
+import OrderHistory from "../pages/account/sections/OrderHistory.tsx";
+import ChangePassword from "../pages/account/sections/ChangePassword.tsx";
 
 export const router = createBrowserRouter([
     {
@@ -93,7 +95,11 @@ export const router = createBrowserRouter([
             },
             {
                 path: "order_history",
-                element: <OrderPage/>
+                element: <OrderHistory/>
+            },
+            {
+                path: "change_password",
+                element: <ChangePassword/>
             },
         ]
     }

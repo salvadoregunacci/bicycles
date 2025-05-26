@@ -18,6 +18,33 @@ import {cartSimilarItems} from "../../../data_mocup/cartSimilarItems.ts";
 import {RootState} from "../../store.ts";
 import {blogItems} from "../../../data_mocup/blogItems.ts";
 import {ordersItems} from "../../../data_mocup/orderItems.ts";
+import {wishlistItems} from "../../../data_mocup/wishlistItems.ts";
+
+export const getWishlist = createAsyncThunk<IShopItem[], undefined, {
+    rejectValue: string
+}>("shop/getWishlist", async (_, {rejectWithValue}) => {
+    try {
+        // const res = await axios.get(`/wishlist`);
+
+        const res = {
+            status: 200,
+            data: wishlistItems,
+        }
+
+        if (res.status === 200) {
+            return res.data as IShopItem[];
+        } else {
+            return rejectWithValue("Failed to fetch [wishlist]")
+        }
+    } catch (err) {
+        if (err instanceof Error) {
+            return rejectWithValue(err.message);
+        } else {
+            return rejectWithValue("Unknown error");
+        }
+    }
+});
+
 
 export const getOrders = createAsyncThunk<IOrder[], undefined, {
     rejectValue: string

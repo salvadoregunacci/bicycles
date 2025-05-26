@@ -82,11 +82,12 @@ export interface IShopState {
     novaPoshtaApiKey: string,
     blogItems: IPreviewCard[] | null,
     orders: IOrder[] | null,
+    wishlist: IShopItem[] | null,
 }
 
 export interface IOrder {
     date: number,
-    orderId: number,
+    id: number,
     status: "new" | "completed",
     items: IShopItem[],
 }

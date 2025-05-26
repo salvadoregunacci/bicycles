@@ -3,7 +3,7 @@ import {IOrder} from "../types.ts";
 export const ordersItems: IOrder[] = [
     {
         date: 1748233721,
-        orderId: 789564679,
+        id: 789564679,
         status: "new",
         items: [
             {
@@ -56,7 +56,7 @@ export const ordersItems: IOrder[] = [
     },
     {
         date: 1745327736,
-        orderId: 789564875,
+        id: 789564875,
         status: "completed",
         items: [
             {

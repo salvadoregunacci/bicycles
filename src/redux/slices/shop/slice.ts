@@ -9,7 +9,7 @@ import {
     getItemFullInfo,
     getNewItems, getOrders,
     getOutfitItems,
-    getReviews,
+    getReviews, getWishlist,
 } from "./asyncThunks.ts";
 import {getTotalPrice, getTotalSale} from "../../../helpers.ts";
 import {cartItems} from "../../../data_mocup/cartItems.ts";
@@ -219,6 +219,7 @@ const initialState: IShopState = {
     novaPoshtaApiKey: "a43d5f8dce21ab55d386bd285212ec2c", // TODO: найти номер для API
     blogItems: null,
     orders: null,
+    wishlist: null,
 }
 
 const shopSlice = createSlice({
@@ -304,6 +305,9 @@ const shopSlice = createSlice({
         });
         builder.addCase(getOrders.fulfilled, (state, action) => {
             state.orders = action.payload;
+        });
+        builder.addCase(getWishlist.fulfilled, (state, action) => {
+            state.wishlist = action.payload;
         });
     }
 });

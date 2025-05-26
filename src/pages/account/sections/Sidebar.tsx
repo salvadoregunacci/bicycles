@@ -9,7 +9,7 @@ const Sidebar = () => {
                 <ul className="t3">
                     <li>
                         <NavLink
-                            to="/account/orders"
+                            to="/account/order_history"
                             className={({isActive}) => (isActive ? '_active' : '')}
                         >
                             Історія замовлень
