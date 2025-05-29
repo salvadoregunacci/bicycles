@@ -1586,3 +1586,298 @@ body {
   }
 }
 
+@media (max-width: 1200px) {
+  .section_mailing {
+    background-position: 185% center;
+  }
+
+  .footer {
+    padding-top: 60px;
+  }
+
+  .footer__company-desc {
+    margin-top: 32px;
+  }
+
+  .footer-cols {
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-areas:
+    "row1 row1 row1"
+    "row2 row3 row4";
+    row-gap: 32px;
+  }
+
+  .footer-col:nth-child(1) {
+    grid-area: row1;
+  }
+
+  .footer-col:nth-child(2) {
+    grid-area: row2;
+  }
+
+  .footer-col:nth-child(3) {
+    grid-area: row3;
+  }
+
+  .footer-col:nth-child(4) {
+    grid-area: row4;
+  }
+
+  .footer-col_1 {
+    text-align: center;
+    width: 100%;
+    margin-bottom: 40px;
+  }
+
+  .footer-col_2 {
+    padding-left: 0;
+  }
+}
+
+@media (max-width: 1100px) {
+  .header .nav-bar {
+    display: none;
+  }
+
+  .header-controls {
+    width: 100%;
+    justify-content: flex-end;
+    padding-right: 45px;
+  }
+
+  .item-card {
+    .item-card__content {
+      height: 530px;
+      z-index: 2;
+    }
+  }
+
+  .item-card {
+    height: 530px;
+  }
+}
+
+@media (max-width: 1000px) {
+  .footer__company-desc {
+    font-size: 14px;
+  }
+
+  .item-card .item-card__available {
+    top: 5px;
+    right: 16px;
+  }
+
+  .items-section {
+    padding: 40px 0 0;
+  }
+
+  .item-card .item-card__content {
+    position: relative;
+    height: auto;
+    padding: 16px 16px 24px;
+  }
+
+  .item-card .item-card__content:hover {
+    height: auto;
+  }
+
+  .up-btn {
+    width: 50px;
+    height: 50px;
+    right: 6%;
+  }
+
+  .item-card {
+    height: auto;
+  }
+
+  .item-card .item-card__preview {
+    height: 200px;
+  }
+
+  .item-card .item-card__preview img {
+    max-width: 70%;
+  }
+
+  .item-card__flag img {
+    width: 60px;
+  }
+}
+
+@media (max-width: 900px) {
+  .header {
+    height: 80px;
+  }
+
+  .logo.md svg {
+    width: 60px;
+  }
+
+  .section_promo .promo {
+    top: 14%;
+  }
+}
+
+@media (max-width: 768px) {
+  .page {
+    .marquee .brand_wahoo {
+      width: 190px;
+      height: 65px;
+    }
+
+    .marquee .brand_tacx {
+      width: 110px;
+      height: 65px;
+    }
+
+    .marquee .brand {
+      height: 30px;
+    }
+
+    .section_mailing {
+      background-position: 40vw center;
+    }
+
+    h2 {
+      font-size: 48px;
+    }
+  }
+
+  .footer-cols {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-areas:
+        "row1 row1"
+        "row2 row3"
+        "row4 row4";
+  }
+
+  .footer-list li {
+    justify-content: center;
+  }
+
+  .footer-list__title {
+    text-align: center;
+  }
+}
+
+@media (max-width: 700px) {
+  .items-section .swiper-slide {
+    display: flex;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 600px) {
+  .page {
+    .marquee {
+      column-gap: 40px;
+      padding-left: 0;
+    }
+  }
+}
+
+@media (max-width: 520px) {
+  .page {
+    h2 {
+      text-align: center;
+    }
+
+    .presentation-article {
+      align-items: center;
+    }
+
+    .contacts {
+      width: 100%;
+    }
+
+    .contacts_container {
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+      justify-content: flex-start;
+    }
+
+    .contacts__item {
+      width: 100%;
+    }
+
+    .section_contacts {
+      border-top: 1px solid $gray-100;
+      margin-top: 40px;
+    }
+
+    .section_contacts .map-bg {
+      width: auto;
+      max-width: 100%;
+      height: 400px;
+      object-fit: cover;
+    }
+  }
+}
+
+@media (max-width: 500px) {
+  .search .search__content {
+    right: auto;
+    left: 0;
+    transform: translateY(130%) translateX(-30%);
+  }
+
+  .search.active .search__content {
+    right: auto;
+    left: 0;
+    transform: translateY(120%) translateX(-30%);
+  }
+}
+
+@media (max-width: 460px) {
+  .page {
+    .mailing__input {
+      max-width: 100%;
+    }
+
+    .mailing__form-row {
+      display: flex;
+      flex-direction: column;
+      row-gap: 15px;
+      align-items: center;
+
+      .btn {
+        width: 100%;
+      }
+    }
+
+    .mailing__checkbox {
+      margin-top: 24px;
+    }
+  }
+
+  .burger-menu__content {
+    width: 100%;
+  }
+}
+
+
+@media (max-width: 390px) {
+  .page {
+    .footer-cols {
+      display: flex;
+      flex-direction: column;
+      row-gap: 40px;
+    }
+
+    .footer-list__title {
+      color: $gray-300;
+    }
+
+    h2 {
+      font-size: 36px;
+    }
+  }
+}
+
+@media (max-width: 380px) {
+  .header-controls {
+    padding-right: 24px;
+    column-gap: 20px;
+  }
+}

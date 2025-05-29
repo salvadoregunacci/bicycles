@@ -59,7 +59,7 @@ const ContactsList = ({className = "", ...props}: IProps) => {
                     </address>
                 </div>
                 <div className="contacts__item email">
-                    <svg className="contacts__item-icon" width="32" height="32" viewBox="0 0 32 32" fill="none"
+                    <svg className="contacts__item-icon email" width="32" height="32" viewBox="0 0 32 32" fill="none"
                          xmlns="http://www.w3.org/2000/svg">
                         <path
                             d="M26.6667 6.66699H5.33333C4.96515 6.66699 4.63181 6.81623 4.39052 7.05751C4.14924 7.29881 4 7.63214 4 8.00033V24.0003C4 24.7367 4.59696 25.3337 5.33333 25.3337H26.6667C27.4031 25.3337 28 24.7367 28 24.0003V8.00033C28 7.63214 27.8508 7.29881 27.6095 7.05751C27.3681 6.81623 27.0348 6.66699 26.6667 6.66699Z"

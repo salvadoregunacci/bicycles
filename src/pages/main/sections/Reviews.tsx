@@ -33,6 +33,19 @@ const Reviews = () => {
                                 slidesPerView={3.6}
                                 modules={[Keyboard]}
                                 keyboard={{enabled: true}}
+                                breakpoints={{
+                                    1320: {
+                                        slidesPerView: 3.6,
+                                    },
+                                    700: {
+                                        slidesPerView: 2,
+                                        spaceBetween: 24,
+                                    },
+                                    320: {
+                                        slidesPerView: 1,
+                                        spaceBetween: 24,
+                                    }
+                                }}
                             >
                                 {
                                     reviews.map((review, index) => (

@@ -33,6 +33,19 @@ const ItemsSection = ({items, title, viewAllLink, itemsPerView = 3, className = 
                                 className="items-section__slider"
                                 navigation
                                 keyboard
+                                breakpoints={{
+                                    1200: {
+                                        slidesPerView: 3,
+                                    },
+                                    700: {
+                                        slidesPerView: 2,
+                                        spaceBetween: 24,
+                                    },
+                                    320: {
+                                        slidesPerView: 1,
+                                        spaceBetween: 24,
+                                    }
+                                }}
                             >
                                 {
                                     items.map(item => (

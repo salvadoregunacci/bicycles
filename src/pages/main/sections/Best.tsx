@@ -4,11 +4,12 @@ import {useAppDispatch, useAppSelector} from "../../../hooks.ts";
 import Loader from "../../../components/ui/Loader.tsx";
 import ItemCard from "../../../components/ItemCard.tsx";
 import React, {useEffect, useRef} from "react";
-import {Autoplay} from "swiper/modules";
+import {Autoplay, Navigation} from "swiper/modules";
 import {Swiper as SwiperClass} from 'swiper/types';
 
 import 'swiper/css';
 import 'swiper/css/autoplay';
+import 'swiper/css/navigation';
 import Container from "../../../components/Container.tsx";
 import {getBestItems} from "../../../redux/slices/shop/asyncThunks.ts";
 
@@ -79,7 +80,18 @@ const Best = () => {
                                 loop={true}
                                 spaceBetween={50}
                                 slidesPerView={3}
-                                modules={[Autoplay]}
+                                modules={[Autoplay, Navigation]}
+                                navigation
+                                breakpoints={{
+                                    700: {
+                                        slidesPerView: 2,
+                                        spaceBetween: 24
+                                    },
+                                    320: {
+                                        slidesPerView: 1,
+                                        spaceBetween: 24,
+                                    }
+                                }}
                                 autoplay={{
                                     delay: 6000,
                                     disableOnInteraction: true

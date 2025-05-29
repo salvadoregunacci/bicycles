@@ -324,6 +324,10 @@
       max-width: 430px;
     }
   }
+
+  .swiper-button-next, .swiper-button-prev {
+    display: none;
+  }
 }
 
 .best-items-slider-wrap {
@@ -595,8 +599,9 @@
   padding-top: 130px;
 
   .map-bg {
-    height: 500px;
     margin-top: 80px;
+    width: 100%;
+    max-height: 500px;
   }
 }
 
@@ -627,4 +632,670 @@
 .contacts_container {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
+}
+
+.section_promo {
+  .swiper-slide img {
+    width: 100%;
+  }
+}
+
+.contacts__item-icon.email {
+  min-height: 32px;
+  min-width: 32px;
+}
+
+@media (max-width: 1900px) {
+  .best-items-slider-wrap {
+    max-width: $container-width;
+    margin: 0 auto;
+    transform: translateX(0);
+  }
+
+  .section_best .container h2 {
+    max-width: none;
+  }
+}
+
+@media (max-width: 1850px) {
+  .benefits-side-block {
+    display: none;
+  }
+
+  .benefits-wrap {
+    max-width: $container-width;
+    margin: 0 auto;
+
+    .swiper {
+      display: none;
+    }
+  }
+
+  .benefits-items {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .benefits-item {
+    width: 100%;
+    background: #34312D;
+  }
+
+  .benefits-item__link {
+    color: $orange-100;
+
+    &:hover {
+      color: $orange-100;
+    }
+  }
+
+  .benefits-item__title {
+    max-width: none;
+  }
+}
+
+@media (max-width: 1400px) {
+  .container,
+  .section_best .container,
+  .best-items-slider-wrap,
+  .benefits-wrap {
+    max-width: 1100px;
+  }
+
+  .section_promo .promo h1 {
+    font-size: 90px;
+  }
+
+  .advantages-wrap {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    row-gap: 32px;
+  }
+
+  .advantage-item__desc {
+    max-width: none;
+  }
+
+  .advantage-item__title {
+    color: $orange-100
+  }
+
+  .section_promo .promo {
+    top: 130px;
+  }
+
+  .presentation-wrap {
+    column-gap: 40px;
+  }
+
+  .presentation-article {
+    max-width: 450px;
+  }
+
+  .presentation-article__preview {
+    width: 100%;
+  }
+
+  .section_presentation,
+  .section_benefits,
+  .section_reviews,
+  .section_contacts {
+    padding-top: 80px;
+  }
+
+  .section_mailing {
+    margin-top: 50px;
+  }
+}
+
+@media (max-width: 1320px) {
+  .container,
+  .section_best .container,
+  .best-items-slider-wrap,
+  .benefits-wrap,
+  .reviews-slider__wrap {
+    max-width: 90%;
+  }
+
+  .section_promo .promo {
+    top: 15%;
+  }
+
+  .section_promo .promo h1 {
+    font-size: 86px;
+  }
+
+  h2 {
+    font-size: 60px;
+  }
+
+  .reviews-slider__wrap {
+    margin: 60px auto 0;
+    padding-left: 0;
+  }
+}
+
+@media (max-width: 1200px) {
+  .section_promo .promo__content {
+    max-width: 690px;
+  }
+
+  .section_promo .promo h1 {
+    font-size: 72px;
+  }
+
+  .section_promo .promo {
+    top: 18%;
+  }
+
+  .presentation-article {
+    max-width: 360px;
+  }
+
+  .promo-card__text {
+    font-size: 20px;
+  }
+
+  .catalog-wrap {
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 300px);
+    gap: 16px;
+
+    .catalog-card img {
+      max-width: 100%;
+      object-fit: cover;
+      top: auto;
+      bottom: 0;
+    }
+
+    .catalog-card {
+      height: 300px;
+
+      h2 {
+        position: absolute;
+        top: 16px;
+        left: 16px;
+        font-size: 46px;
+      }
+    }
+  }
+
+  .catalog-card:first-child {
+    grid-column: auto;
+
+    img {
+      transform: rotate(10deg);
+      right: -40px;
+      bottom: -50px;
+    }
+  }
+
+  .catalog-card:nth-child(2) {
+    grid-row: auto;
+    height: 300px;
+
+    img {
+      transform: rotate(10deg);
+      right: -40px;
+      bottom: -100px;
+    }
+  }
+
+  .catalog-card:nth-child(3) {
+    grid-row: auto;
+
+    img {
+      transform: rotate(15deg) translateY(18px);
+    }
+  }
+
+  .catalog-card:nth-child(4) {
+    grid-row: auto;
+    transform: translateY(0);
+
+    img {
+      transform: rotate(180deg);
+      right: -60px;
+    }
+  }
+
+  .catalog-card:nth-child(5) {
+    grid-row: auto;
+
+    img {
+      transform: rotate(20deg);
+      right: -10px;
+    }
+  }
+
+  .catalog-card:nth-child(6) {
+    grid-row: auto;
+
+    img {
+      transform: rotate(10deg);
+      right: -10px;
+    }
+  }
+}
+
+@media (max-width: 1100px) {
+  .section_blog .container {
+    column-gap: 40px;
+  }
+
+  .blog-preview {
+    max-width: 450px;
+  }
+
+  .presentation-wrap {
+    flex-direction: column;
+  }
+
+  .presentation-article {
+    max-width: 100%;
+    margin-top: 40px;
+  }
+
+  .presentation-item {
+    max-width: 100%;
+  }
+
+  .presentation-btn {
+    margin-top: 36px;
+  }
+
+  .contacts_container {
+    display: flex;
+    justify-content: space-between;
+    max-width: 100%;
+    padding: 0 5%;
+    flex-wrap: wrap;
+    row-gap: 32px;
+    column-gap: 16px;
+  }
+}
+
+@media (max-width: 1000px) {
+  .section_promo .promo h1 {
+    font-size: 67px;
+  }
+
+  .section_presentation,
+  .section_benefits,
+  .section_reviews,
+  .section_contacts,
+  .section_catalog .container {
+    padding-top: 40px;
+  }
+
+  .section_mailing {
+    margin-top: 50px;
+  }
+
+  .items-section {
+    padding-top: 40px;
+  }
+
+  .section-title {
+    margin-bottom: 40px;
+  }
+
+  .section_best {
+    padding-top: 210px;
+  }
+
+  .section_promo {
+    .swiper-slide {
+      display: flex;
+      justify-content: center;
+    }
+  }
+
+  .section_promo .swiper-slide img {
+    height: 550px;
+    width: auto;
+    object-fit: cover;
+  }
+
+  .items-section__slider {
+    padding-bottom: 100px;
+  }
+
+  .catalog-wrap {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .catalog-card:first-child img {
+    transform: rotate(10deg);
+    right: -70px;
+    bottom: -130px;
+  }
+
+  .catalog-card:nth-child(2) img {
+    transform: rotate(10deg);
+    right: -70px;
+    bottom: -200px;
+  }
+
+  .catalog-wrap .catalog-card h2 {
+    top: 24px;
+    left: 24px;
+  }
+
+  .section_best .container {
+    position: relative;
+    transform: translateX(0%);
+    left: 0;
+    top: 0;
+    z-index: 3;
+  }
+
+  .section_best {
+    padding-top: 40px;
+  }
+
+  .best-items-slider-wrap {
+    margin-top: 40px;
+  }
+
+  .section_benefits {
+    padding-bottom: 80px;
+  }
+
+  .section_video {
+    height: 400px;
+  }
+
+  .section_blog .container {
+    flex-direction: column;
+    padding-bottom: 60px;
+  }
+
+  .blog-preview {
+    max-width: 80%;
+  }
+
+  .section_blog .container .section-title {
+    max-width: none;
+  }
+
+  .section_contacts .map-bg {
+    margin-top: 40px;
+  }
+}
+
+@media (max-width: 900px) {
+  .promo-card__text {
+    font-size: 18px;
+  }
+
+  .promo-card__content {
+    padding: 36px 0;
+    background: none;
+    text-align: center;
+  }
+
+  .promo-card {
+    background: none;
+  }
+
+  .promo-card:nth-child(2) {
+    border: none;
+  }
+
+  .advantages-wrap {
+    gap: 40px
+  }
+}
+
+@media (max-width: 768px) {
+  .section_presentation .section-title {
+    margin-bottom: 40px;
+  }
+
+  .section_promo .promo__content {
+    max-width: 100%;
+    text-align: center;
+  }
+
+  .section_promo .swiper {
+    position: relative;
+
+    &::after {
+      content: "";
+      width: 100%;
+      height: 100%;
+      display: inline-block;
+      position: absolute;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.4);
+      z-index: 2;
+    }
+  }
+
+  .section_promo .promo__content {
+    background: none;
+  }
+
+  .blog-preview {
+    max-width: 100%;
+  }
+
+  .catalog-wrap .catalog-card {
+    height: 250px;
+  }
+
+  .catalog-wrap {
+    grid-template-rows: repeat(2, 250px);
+  }
+
+  .benefits-items {
+    gap: 24px;
+  }
+
+  .contacts__item {
+    width: 40%;
+  }
+
+  .promo-card {
+    padding: 0 16px;
+  }
+
+  .promo-card__text {
+    height: 50px;
+  }
+
+  .promo-card:nth-child(2) {
+    border-right: 1px solid #3e3e3e;
+    border-left: 1px solid #3e3e3e;
+  }
+
+  .promo-cards .container {
+    max-width: 100%;
+  }
+
+  .catalog-wrap .catalog-card h2 {
+    font-size: 36px;
+  }
+
+  .catalog-card:first-child img {
+    bottom: -40%;
+  }
+
+  .catalog-card:nth-child(2) img {
+    bottom: -60%;
+  }
+
+  .best-items-slider .swiper-slide {
+    max-width: none;
+    display: flex;
+    justify-content: center;
+  }
+
+  .reviews-slider .swiper-slide {
+    display: flex;
+    justify-content: center;
+    max-width: none;
+  }
+
+  .preview-card {
+    max-width: 400px;
+  }
+}
+
+@media (max-width: 700px) {
+  .promo-slider .swiper-pagination {
+    display: none;
+  }
+
+  .promo-cards .container {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .promo-card__text {
+    height: auto;
+    max-width: 100%;
+  }
+
+  .section_promo .promo {
+    top: 10%;
+  }
+
+  .section_promo .swiper-slide img {
+    height: 500px;
+  }
+
+  .promo-card:nth-child(2) {
+    border-top: 1px solid #3e3e3e;
+    border-bottom: 1px solid #3e3e3e;
+    border-right: none;
+    border-left: none;
+  }
+
+  .best-items-particle {
+    display: none;
+  }
+
+  .section_video {
+    height: 300px;
+  }
+
+  .section_best {
+    .swiper-button-next, .swiper-button-prev {
+      display: inline-block;
+      color: $gray-300;
+      top: 40%;
+      transition: .3s;
+    }
+
+    .swiper-button-prev:after, .swiper-button-next:after {
+      font-size: 32px;
+    }
+  }
+}
+
+@media (max-width: 650px) {
+  .benefits-item__link {
+    margin-top: 36px;
+  }
+
+  .benefits-items {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .benefits-item__title {
+    height: auto;
+  }
+
+  .benefits-item__desc {
+    height: auto;
+    color: #d3d3d3;
+  }
+
+  .section_promo .swiper-slide img {
+    height: 600px;
+  }
+}
+
+@media (max-width: 600px) {
+  .catalog-wrap .catalog-card {
+    height: 160px;
+  }
+
+  .catalog-wrap {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .catalog-card:first-child img {
+    max-width: 70%;
+    bottom: -20vw;
+  }
+
+  .catalog-card:nth-child(2) img {
+    max-width: 70%;
+    bottom: -30vw;
+    right: -50px;
+  }
+
+  .catalog-card:nth-child(6) img {
+    bottom: -16px;
+  }
+
+  .presentation-info {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .presentation-item__title {
+    color: $orange-100;
+  }
+
+  .advantage-item__title {
+    font-size: 18px;
+  }
+
+  .advantage-item__wrap {
+    height: 60px;
+  }
+}
+
+@media (max-width: 520px) {
+  .promo-card__action {
+    margin-top: 24px;
+  }
+
+  .advantages-wrap {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .advantage-item__wrap {
+    justify-content: center;
+  }
+
+  .advantage-item__desc {
+    text-align: center;
+  }
+
+  .presentation-btn {
+    max-width: 250px;
+    width: 100%;
+  }
+}
+
+@media (max-width: 360px) {
+  .section_promo .promo h1 {
+    font-size: 58px;
+  }
+
+  .section_promo .promo {
+    top: 12%;
+  }
+
+  .catalog-wrap .catalog-card h2 {
+    font-size: 32px;
+  }
 }
