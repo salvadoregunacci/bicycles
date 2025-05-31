@@ -11,6 +11,7 @@
   }
 
   .safeguards-desc {
+    column-gap: 40px;
     margin-top: 48px;
     display: flex;
     justify-content: space-between;
@@ -125,5 +126,32 @@
     border-top: 1px solid $gray-100;
     padding-bottom: 0;
     padding-top: 120px;
+  }
+}
+
+@media (max-width: 900px) {
+  .safeguards-page .safeguards-tables .safeguards-tables__wrap {
+    flex-direction: column;
+    row-gap: 40px;
+  }
+
+  .safeguards-page .safeguards-desc {
+    flex-direction: column;
+    row-gap: 24px;
+  }
+
+  .safeguards-page .sefeguards-exceptions__wrap {
+    flex-direction: column;
+    row-gap: 40px;
+    align-items: center;
+  }
+
+  .safeguards-page .sefeguards-exceptions__bg {
+    display: none;
+  }
+
+  .safeguards-page .section_marquee {
+    margin-top: 50px;
+    padding-top: 50px;
   }
 }

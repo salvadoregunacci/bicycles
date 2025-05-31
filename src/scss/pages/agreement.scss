@@ -101,4 +101,24 @@
     padding-top: 60px;
     padding-bottom: 0;
   }
+
+  .agreement-content strong {
+    word-break: break-word;
+  }
+}
+
+@media (max-width: 500px) {
+  .agreement-page .section_marquee {
+    margin-top: 0;
+  }
+}
+
+@media (max-width: 390px) {
+  .agreement-page .agreement-content {
+    padding: 24px;
+  }
+
+  .agreement-page .agreement-content-section h2 {
+    margin-top: 40px;
+  }
 }

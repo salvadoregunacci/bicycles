@@ -30,3 +30,20 @@
     margin-top: 48px;
   }
 }
+
+@media (max-width: 390px) {
+  .preview-card__preview img {
+    display: inline-block;
+    width: 100%;
+  }
+
+  .blog-page .blog-page__items {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .preview-card {
+    height: auto;
+    width: 100%;
+  }
+}

@@ -1,6 +1,8 @@
 import Container from "../../../components/Container.tsx";
 import {Swiper, SwiperSlide} from "swiper/react";
+import {Navigation} from "swiper/modules"
 import 'swiper/css';
+import 'swiper/css/navigation';
 
 interface IBrandCard {
     title: string,
@@ -57,6 +59,16 @@ const Brands = () => {
                     className="brand-cards__swiper"
                     slidesPerView={2.5}
                     spaceBetween={30}
+                    modules={[Navigation]}
+                    navigation
+                    breakpoints={{
+                        1200: {
+                            slidesPerView: 2.5,
+                        },
+                        320: {
+                            slidesPerView: 1,
+                        }
+                    }}
                 >
                     {
                         cards.map((card, index) => (

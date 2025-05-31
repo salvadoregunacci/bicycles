@@ -38,7 +38,7 @@ const OrderCard = ({
                             (acc + item.price), 0).toLocaleString("ru-RU") + " " + currency
                     }
                 </span>
-                <span className="col">
+                <span className="col status">
                     {status === "new" ? "Нове" : null}
                     {status === "completed" ? "Завершене" : null}
                 </span>

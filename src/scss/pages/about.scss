@@ -142,6 +142,16 @@
   .brands {
     margin-top: 56px;
 
+    .swiper-button-next, .swiper-button-prev {
+      color: $gray-300;
+      transition: .3s;
+      display: none;
+    }
+
+    .swiper-button-prev:after, .swiper-button-next:after {
+      font-size: 32px;
+    }
+
     .brand-cards {
       margin-top: 48px;
       display: flex;
@@ -203,6 +213,20 @@
     background-repeat: no-repeat;
     background-position: center right;
     background-size: contain;
+    position: relative;
+
+    &::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.3);
+      z-index: 1;
+    }
+
+    > * {
+      position: relative;
+      z-index: 2;
+    }
 
     .call-form {
       max-width: 580px;
@@ -281,6 +305,7 @@
     .map-bg {
       display: inline-block;
       margin-top: 60px;
+      width: 100%;
     }
 
     .contacts-info {
@@ -292,5 +317,147 @@
   .section_marquee {
     margin-top: 60px;
     padding-bottom: 0;
+  }
+
+  .best-bg {
+    width: 100%;
+  }
+}
+
+@media (max-width: 1800px) {
+  .about-page .desc .desc__bg {
+    display: none;
+  }
+
+  .about-page .desc .desc__content {
+    max-width: 80%;
+  }
+
+  .about-page .best {
+    margin-top: 110px;
+  }
+}
+
+@media (max-width: 1400px) {
+  .about-page h1 {
+    font-size: 72px;
+  }
+
+  .about-page .team .team__wrap {
+    flex-direction: column;
+    row-gap: 40px;
+  }
+
+  .about-page .brands .swiper-slide {
+  }
+
+  .about-page .brands .brand-card {
+  }
+
+  .about-page .brands .brand-cards {
+    padding-left: 5%;
+    padding-right: 5%;
+  }
+
+  .about-page .call {
+    background-size: cover;
+  }
+
+  .about-page .promo__cards {
+    flex-direction: column;
+    row-gap: 24px;
+  }
+
+  .about-page .desc,
+  .about-page .best,
+  .about-page .call,
+  .about-page .team,
+  .about-page .contacts {
+    margin-top: 60px;
+  }
+
+  .about-page .gallery .swiper-slide {
+    height: auto;
+  }
+
+  .about-page .gallery {
+    display: none;
+  }
+
+  .about-page .section_marquee {
+    margin-top: 0;
+  }
+}
+
+@media (max-width: 768px) {
+  .about-page h1 {
+    font-size: 64px;
+  }
+
+  .about-page .call {
+    background-position: center center;
+  }
+
+  .page.about-page h2.promo-card__title {
+    font-size: 32px;
+  }
+
+  .about-page .team .team__wrap {
+    margin-top: 40px;
+  }
+
+  .about-page .team-bg {
+    width: 100%;
+  }
+
+  .about-page .brands .swiper-button-next,
+  .about-page .brands .swiper-button-prev {
+    display: inline-block;
+  }
+}
+
+@media (max-width: 600px) {
+  .about-page h1 {
+    font-size: 54px;
+  }
+
+  .page.about-page h2.promo-card__title {
+    font-size: 26px;
+  }
+
+  .about-page .desc,
+  .about-page .best,
+  .about-page .call,
+  .about-page .team,
+  .about-page .contacts {
+    margin-top: 40px;
+  }
+
+  .about-page .best .row p:first-child {
+    max-width: none;
+  }
+
+  .about-page .best .row {
+    flex-direction: column;
+    row-gap: 24px;
+  }
+
+  .about-page .desc .desc__content {
+    max-width: 100%;
+  }
+}
+
+
+@media (max-width: 460px) {
+  .about-page h1 {
+    font-size: 48px;
+  }
+
+  .page.about-page h2.promo-card__title {
+    font-size: 24px;
+  }
+
+  .about-page .call .call-form__tel {
+    font-size: 32px;
   }
 }

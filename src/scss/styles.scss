@@ -1009,6 +1009,11 @@ body {
 
   ol {
     display: flex;
+    flex-wrap: wrap;
+  }
+
+  li {
+    display: flex;
   }
 }
 
@@ -1030,8 +1035,8 @@ body {
 
 .section-header {
   background-repeat: no-repeat;
-  background-size: 100%;
-  background-position: center center;
+  background-size: cover;
+  background-position: top center;
   padding-top: 48px;
   padding-bottom: 60px;
 }
@@ -1702,6 +1707,17 @@ body {
   .item-card__flag img {
     width: 60px;
   }
+
+  .contacts-info .container {
+    flex-direction: column;
+    row-gap: 40px;
+  }
+
+  .contacts-info .info-list {
+    display: flex;
+    column-gap: 24px;
+    flex-wrap: wrap;
+  }
 }
 
 @media (max-width: 900px) {
@@ -1773,6 +1789,15 @@ body {
       column-gap: 40px;
       padding-left: 0;
     }
+  }
+
+  .contacts-info .info-details li {
+    flex-direction: column;
+  }
+
+  .contacts-info .info-list {
+    display: block;
+    flex-wrap: nowrap;
   }
 }
 
@@ -1853,6 +1878,15 @@ body {
 
   .burger-menu__content {
     width: 100%;
+  }
+
+  .accordeon__body .value {
+    white-space: nowrap;
+  }
+
+  .accordeon .accordeon__header {
+    height: auto;
+    padding: 15px;
   }
 }
 

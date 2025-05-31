@@ -41,6 +41,7 @@
 
       .value {
         color: $gray-400;
+        white-space: nowrap;
       }
     }
 
@@ -82,5 +83,18 @@
   .section_marquee {
     padding-top: 150px;
     padding-bottom: 0;
+  }
+}
+
+@media (max-width: 860px) {
+  .workshop-page .basic-services .wrap {
+    flex-direction: column;
+    row-gap: 40px;
+  }
+}
+
+@media (max-width: 460px) {
+  .workshop-page .basic-services .row {
+    column-gap: 16px;
   }
 }

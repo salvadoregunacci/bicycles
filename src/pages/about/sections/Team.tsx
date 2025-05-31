@@ -50,7 +50,7 @@ const Team = () => {
                             srcSet="/images/about/team/bg@1x.avif 1x, /images/about/team/bg@2x.avif 2x"
                             type="image/avif"
                         />
-                        <img src="/images/about/team/bg@1x.avif" srcSet="/images/about/team/bg@2x.avif 2x" alt="bg"/>
+                        <img className="team-bg" src="/images/about/team/bg@1x.avif" srcSet="/images/about/team/bg@2x.avif 2x" alt="bg"/>
                     </picture>
                 </div>
             </Container>

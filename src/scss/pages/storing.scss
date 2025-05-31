@@ -61,3 +61,26 @@
     padding-top: 120px;
   }
 }
+
+@media (max-width: 1000px) {
+  .storing-page .storing-info__block_1 {
+    max-width: 100%;
+  }
+
+  .storing-page .storing-info__wrap {
+    flex-direction: column;
+    row-gap: 40px;
+  }
+}
+
+@media (max-width: 768px) {
+  .storing-page .storing-info__wrap {
+    margin-top: 32px;
+    row-gap: 24px;
+  }
+
+  .storing-page .section_marquee {
+    padding-top: 50px;
+    margin-top: 50px;
+  }
+}

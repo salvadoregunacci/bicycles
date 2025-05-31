@@ -20,7 +20,7 @@ const Best = () => {
             </Container>
             <picture>
                 <source srcSet="/images/about/best/bg@1x.avif 1x, /images/about/best/bg@2x.avif 2x" type="image/avif"/>
-                <img src="/images/about/best/bg@1x.webp" srcSet="/images/about/best/bg@2x.webp 2x" alt="bg"/>
+                <img className="best-bg" src="/images/about/best/bg@1x.webp" srcSet="/images/about/best/bg@2x.webp 2x" alt="bg"/>
             </picture>
         </section>
     );

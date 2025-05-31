@@ -8,8 +8,56 @@ import Filter from "./sections/Filter.tsx";
 import Content from "./sections/Content.tsx";
 import UpBtn from "../../components/ui/UpBtn.tsx";
 import "../../scss/pages/catalog.scss";
+import {createContext, Dispatch, SetStateAction, useRef, useState} from "react";
+
+type CatalogContextType = {
+    activeFilter: boolean;
+    setActiveFilter: Dispatch<SetStateAction<boolean>>;
+};
+
+export const CatalogContext = createContext<CatalogContextType>({
+    activeFilter: false,
+    setActiveFilter: () => {},
+});
 
 const CatalogPage = () => {
+    const [activeFilter, setActiveFilter] = useState(false);
+    const touchStartX = useRef<number | null>(null);
+    const touchEndX = useRef<number | null>(null);
+
+    const handleTouchStart = (e: React.TouchEvent) => {
+        if (window.innerWidth <= 1200) {
+            touchStartX.current = e.touches[0].clientX;
+        }
+    };
+
+    const handleTouchEnd = (e: React.TouchEvent) => {
+        if (window.innerWidth > 1200) return;
+
+        touchEndX.current = e.changedTouches[0].clientX;
+
+        const delta = touchStartX.current! - touchEndX.current!;
+
+        if (Math.abs(delta) < 50) return; // игнорируем мелкие движения
+
+        if (delta > 0) {
+            handleCloseFilter(); // свайп влево
+        } else {
+            handleOpenFilter(); // свайп вправо
+        }
+
+        touchStartX.current = null;
+        touchEndX.current = null;
+    };
+
+    const handleCloseFilter = () => {
+        setActiveFilter(false);
+    };
+
+    const handleOpenFilter = () => {
+        setActiveFilter(true);
+    };
+
     return (
         <Page title="Каталог" className="page_catalog">
             <Header/>
@@ -21,11 +69,17 @@ const CatalogPage = () => {
                 </Breadcrumbs>
             </SectionHeader>
             <Container>
-                <div className="catalog">
-                    <UpBtn/>
-                    <Filter/>
-                    <Content/>
-                </div>
+                <CatalogContext.Provider value={{activeFilter, setActiveFilter}}>
+                    <div
+                        className="catalog"
+                        onTouchStart={handleTouchStart}
+                        onTouchEnd={handleTouchEnd}
+                    >
+                        <UpBtn/>
+                        <Filter/>
+                        <Content/>
+                    </div>
+                </CatalogContext.Provider>
             </Container>
             <Footer/>
         </Page>

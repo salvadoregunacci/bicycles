@@ -5,13 +5,16 @@ import FilterStock from "../../../components/catalogFilter/FilterStock.tsx";
 import FilterColor from "../../../components/catalogFilter/FilterColor.tsx";
 import {useAppDispatch} from "../../../hooks.ts";
 import {resetCatalogFilter} from "../../../redux/slices/shop/slice.ts";
+import {useContext} from "react";
+import {CatalogContext} from "../CatalogPage.tsx";
 
 
 const Filter = () => {
     const dispatch = useAppDispatch();
+    const {activeFilter} = useContext(CatalogContext);
 
     return (
-        <aside className="filter">
+        <aside className={`filter ${activeFilter ? "_active" : ""}`}>
             <div className="filter__blocks">
                 <FilterStock/>
                 <FilterEntity
