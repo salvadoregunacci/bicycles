@@ -1,5 +1,3 @@
-import React from 'react';
-
 const Exceptions = () => {
     return (
         <section className="sefeguards-exceptions">

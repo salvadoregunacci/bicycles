@@ -1,5 +1,4 @@
 import {HTMLAttributes, ReactNode, useState} from "react";
-import {Link} from "react-router-dom";
 
 interface IProps extends HTMLAttributes<HTMLDivElement> {
     children: ReactNode,
